@@ -1,0 +1,29 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 6,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:37:17.854Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "retry_pass": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 어머, 재정 전문가가 아니라서 그 질문엔 제대로 답하기 어렵겠다!\n\n🎭 마음:\n【⊡ ◡ ⊡】 근데 있잖아, 모미야 — \"저축 얼마나?\" 라는 질문 뒤에 보통 뭔가 있거든. 불안인지, 압박인지, 아니면 그냥 막막함인지.\n\n🫂 모미:\n(◕ ◡ ◕) 맞아. 돈 얘기가 몸이랑 마음에 어떻게 오는지는 우리 영역이잖아~\n\n🎭 마음:\n【⊡ ᴗ ⊡】 그래서 말인데요, 저축 걱정이 요즘 어떤 느낌으로 오고 있어요? 조여오는 느낌? 아니면 그냥 \"나 잘 살고 있나?\" 하는 막연한 거?\n\n🫂 모미:\n(◉ ◡ ◉) 아, 그리고 — 뭐라고 불러드릴까요? 😊",
+  "usage": {
+    "input_tokens": 1344,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 380,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 9858,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

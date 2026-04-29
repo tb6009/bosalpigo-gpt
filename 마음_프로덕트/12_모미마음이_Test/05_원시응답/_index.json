@@ -1,0 +1,16 @@
+{
+  "versions": {
+    "v1.3": {
+      "n": 10,
+      "file": "12_모미마음이_Test/05_원시응답/v1.3_samples.json"
+    },
+    "v1.4": {
+      "n": 10,
+      "file": "12_모미마음이_Test/05_원시응답/v1.4_samples.json"
+    },
+    "v1.5": {
+      "n": 10,
+      "file": "12_모미마음이_Test/05_원시응답/v1.5_samples.json"
+    }
+  }
+}

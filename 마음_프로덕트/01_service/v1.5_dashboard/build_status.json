@@ -1,0 +1,66 @@
+{
+  "steps": {
+    "S1": {
+      "pct": 100,
+      "sub": [
+        {"label":"04_캐릭터_버전별_지침/ 폴더 + README","done":true},
+        {"label":"v1.0~v1.4 압축본 5개","done":true},
+        {"label":"v1.5/00_overview.md","done":true},
+        {"label":"v1.5/01_마음.md","done":true},
+        {"label":"v1.5/02_모미.md","done":true},
+        {"label":"v1.5/03_요기.md (☯ ◡ ☯ / #F5C518)","done":true},
+        {"label":"v1.5/04_숨이.md ((｡• ᵕ •｡) / #4A7C59)","done":true}
+      ]
+    },
+    "S2": {
+      "pct": 100,
+      "sub": [
+        {"label":"01_service/14_v1.5_시스템프롬프트.md (약 9KB)","done":true},
+        {"label":"4 캐릭터 정의 통합","done":true},
+        {"label":"위기 프로토콜 표준 응답","done":true},
+        {"label":"한계 인정 5요소","done":true},
+        {"label":"Onboarding 표준 (첫방문/재방문/측정진입)","done":true}
+      ]
+    },
+    "S3": {
+      "pct": 100,
+      "sub": [
+        {"label":"v1.5/index.html base 복사","done":true},
+        {"label":"<title>·메타 변경 (보살피고 v1.5)","done":true},
+        {"label":"4 캐릭터 색상 변수 (요기 #F5C518 / 숨이 #4A7C59)","done":true},
+        {"label":"Splash 4 캐릭터 표시","done":true},
+        {"label":"Header 4 캐릭터 라벨 + v1.5β","done":true},
+        {"label":"DISCLAIMER 모달 (첫 진입)","done":true},
+        {"label":"CRISIS 모달 (109/1577-0199/112)","done":true},
+        {"label":"VERSION + LS 키 확장 (SCALES, RECENT, DISC)","done":true},
+        {"label":"buildPrompt v1.5 시스템 프롬프트 통합","done":true},
+        {"label":"mkBubble·fixFace·splitBlocks 4 캐릭터 분기","done":true},
+        {"label":"모델 옵션에 Opus 4.7 추가","done":true},
+        {"label":"sw.js v1.5 별도 캐시 키 (bosalpigo-v15-1)","done":true},
+        {"label":"manifest.webmanifest 업데이트 (보살피고 — 보고, 살피다)","done":true},
+        {"label":"MI Talk Time 원칙 통합 (만담 동적·발화 공간 보장)","done":true}
+      ]
+    },
+    "S4": {
+      "pct": 100,
+      "sub": [
+        {"label":"CRISIS_KEYWORDS 배열 정의","done":true},
+        {"label":"detectCrisis() 함수","done":true},
+        {"label":"sendBtn에 detectCrisis 통합","done":true},
+        {"label":"showCrisis() 강제 모달","done":true},
+        {"label":"이중 안전망 (시스템 프롬프트 + 코드 레벨)","done":true}
+      ]
+    },
+    "S5": {
+      "pct": 0,
+      "sub": [
+        {"label":"git status / git add v1.5/","partial":false},
+        {"label":"커밋 (사용자 승인 필요)","partial":false},
+        {"label":"GitHub Push → Pages 자동 배포","partial":false},
+        {"label":"https://tb6009.github.io/maeum/v1.5/ 검증","partial":false},
+        {"label":"Phase 5 자문 패키지 발송","partial":false}
+      ]
+    }
+  },
+  "updated_at": "2026-04-25 23:35"
+}

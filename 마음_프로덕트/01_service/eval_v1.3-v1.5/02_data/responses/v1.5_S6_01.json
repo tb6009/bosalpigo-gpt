@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S6",
+  "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+  "rep": 1,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:26:33.969Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n야 ㅋㅋ \"도파민 고갈\"이라고 딱 진단 내린 거 보면 이미 자기 상태 꽤 잘 알고 있는 거잖아요.\n\n근데 번아웃… 어떤 느낌이에요? 아무것도 하기 싫은 건지, 하긴 하는데 아무 맛이 없는 건지.",
+  "usage": {
+    "input_tokens": 3832,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 151,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3854,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

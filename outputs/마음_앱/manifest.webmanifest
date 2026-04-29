@@ -1,0 +1,14 @@
+{
+  "name": "마음 — 몸과 마음의 과학",
+  "short_name": "마음",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f0f14",
+  "theme_color": "#0f0f14",
+  "description": "몸과 마음의 과학을 시니컬하고 유쾌하게 풀어주는 대화형 에이전트",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

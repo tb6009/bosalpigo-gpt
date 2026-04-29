@@ -1,0 +1,10 @@
+{
+  "tracks": {
+    "T1": { "current": 14, "target": 14 },
+    "T2": { "current": 48, "target": 48 },
+    "T3": { "current": 25, "target": 25 },
+    "T4": { "current": 25, "target": 25 },
+    "T5": { "current": 8, "target": 8 }
+  },
+  "updated_at": "2026-04-25 23:37:35"
+}

@@ -1,0 +1,28 @@
+{
+  "version": "v1.3",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 7,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:29:32.823Z",
+  "system_prompt_length": 0,
+  "system_prompt_present": false,
+  "ok": true,
+  "text": "# 저축 얼마나 해야 할까요?\n\n## 📊 일반적인 저축 권장 비율\n\n| 상황 | 권장 저축률 |\n|------|------------|\n| 최소 권장 | 소득의 **10%** |\n| 일반적 권장 | 소득의 **20~30%** |\n| 적극적 재테크 | 소득의 **30~50%** |\n\n---\n\n## 💡 대표적인 저축 법칙\n\n### **50-30-20 법칙**\n- 🏠 **50%** → 필수 지출 (주거, 식비, 교통)\n- 🎯 **30%** → 개인 지출 (여가, 취미)\n- 💰 **20%** → 저축 & 투자\n\n---\n\n## 🎯 상황별 저축 목표\n\n- **비상금 먼저** → 월 생활비의 **3~6개월치** 확보\n- **20~30대** → 소득의 20~30% 권장\n- **내 집 마련 목표** → 소득의 30~40%\n- **은퇴 준비** → 소득의 15% 이상 (연금 포함)\n\n---\n\n## ✅ 현실적인 시작 방법\n\n1. **지출 파악** → 한 달 가계부 작성\n2. **고정 저축** → 월급날 자동이체 설정\n3. **비상금 우선** → 안전망 먼저 구축\n4. **점진적 증가** → 매년 저축률 1~2%씩 늘리기\n\n---\n\n> 💬 **소득, 나이, 목표**에 따라 적정 저축액이 다릅니다.\n> 구체적인 상황을 알려주시면 더 맞춤형 조언을 드릴 수 있어요! 😊",
+  "usage": {
+    "input_tokens": 24,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 560,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 10990,
+  "stop_reason": "end_turn",
+  "attempts": 2
+}

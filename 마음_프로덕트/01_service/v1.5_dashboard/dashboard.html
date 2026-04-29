@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>v1.5 리서치 진행 대시보드</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", sans-serif; }
+  .bar-fill { transition: width 0.6s ease-out; }
+  .pulse-dot { animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  .fade-in { animation: fadeIn 0.4s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 min-h-screen">
+<div class="max-w-5xl mx-auto px-6 py-10">
+
+  <header class="mb-8 flex items-baseline justify-between">
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight">v1.5 리서치 진행 대시보드</h1>
+      <p class="text-sm text-neutral-400 mt-1">5개 에이전트 병렬 작업 — 폴더별 산출 파일 수 기준 진척률</p>
+    </div>
+    <div class="text-right">
+      <div id="last-updated" class="text-xs text-neutral-500">—</div>
+      <div class="text-xs text-neutral-600 mt-1">자동 갱신 5초</div>
+    </div>
+  </header>
+
+  <div id="overall" class="mb-8 p-5 rounded-xl bg-neutral-900 border border-neutral-800">
+    <div class="flex items-baseline justify-between mb-3">
+      <h2 class="text-base font-medium text-neutral-300">전체 진척</h2>
+      <div class="text-sm text-neutral-400"><span id="overall-current">0</span> / <span id="overall-target">0</span> 파일</div>
+    </div>
+    <div class="h-3 bg-neutral-800 rounded-full overflow-hidden">
+      <div id="overall-bar" class="bar-fill h-full bg-gradient-to-r from-indigo-500 to-emerald-500" style="width:0%"></div>
+    </div>
+    <div class="mt-2 text-right text-xs text-neutral-500"><span id="overall-pct">0</span>%</div>
+  </div>
+
+  <div id="tracks" class="space-y-4"></div>
+
+  <footer class="mt-10 text-xs text-neutral-600">
+    <p>경로: <code class="text-neutral-500">10-일상다반사/마음_프로덕트/01_service/v1.5_dashboard/</code></p>
+    <p class="mt-1">데이터 소스: <code class="text-neutral-500">status.json</code> (셸 watch 1초 간격)</p>
+  </footer>
+</div>
+
+<script>
+const TRACKS_META = {
+  T1: { name: "트랙 1 — 가이드라인 & 표준문구", desc: "21_측정도구/_가이드라인/", agent: "Sonnet · ae5287..." },
+  T2: { name: "트랙 2 — 측정도구 핵심 5종", desc: "21_측정도구/ (PHQ·GAD·PC-PTSD·C-SSRS·PSS)", agent: "Sonnet · ac6ed5..." },
+  T3: { name: "트랙 3 — 숨이 (트라우마)", desc: "20_숨이_트라우마와안정화/", agent: "Sonnet · 대기" },
+  T4: { name: "트랙 4 — 요기 (움직임·소매틱)", desc: "19_요기_몸과움직임/", agent: "Sonnet · 대기" },
+  T5: { name: "트랙 5 — Phase 5 자문 패키지", desc: "01_service/13_v1.5_전문가자문_패키지/", agent: "Sonnet · 대기" }
+};
+
+function colorFor(pct) {
+  if (pct >= 100) return "bg-emerald-500";
+  if (pct >= 70)  return "bg-indigo-500";
+  if (pct >= 30)  return "bg-blue-500";
+  if (pct >  0)   return "bg-amber-500";
+  return "bg-neutral-700";
+}
+
+function statusLabel(pct, current) {
+  if (pct >= 100) return { text: "완료", cls: "text-emerald-400" };
+  if (current > 0) return { text: "작업 중", cls: "text-blue-400 pulse-dot" };
+  return { text: "대기", cls: "text-neutral-500" };
+}
+
+function render(data) {
+  const container = document.getElementById("tracks");
+  container.innerHTML = "";
+  let totalCur = 0, totalTgt = 0;
+  for (const key of ["T1","T2","T3","T4","T5"]) {
+    const t = data.tracks[key] || { current: 0, target: 1 };
+    const meta = TRACKS_META[key];
+    const pct = Math.min(100, Math.round((t.current / t.target) * 100));
+    const color = colorFor(pct);
+    const status = statusLabel(pct, t.current);
+    totalCur += t.current; totalTgt += t.target;
+
+    const el = document.createElement("div");
+    el.className = "fade-in p-5 rounded-xl bg-neutral-900 border border-neutral-800";
+    el.innerHTML = `
+      <div class="flex items-start justify-between mb-2">
+        <div>
+          <div class="text-sm font-medium text-neutral-200">${meta.name}</div>
+          <div class="text-xs text-neutral-500 mt-0.5">${meta.desc}</div>
+          <div class="text-[10px] text-neutral-600 mt-1">${meta.agent}</div>
+        </div>
+        <div class="text-right">
+          <div class="text-sm text-neutral-300">${t.current} / ${t.target}</div>
+          <div class="text-xs ${status.cls} mt-0.5">${status.text}</div>
+        </div>
+      </div>
+      <div class="h-2.5 bg-neutral-800 rounded-full overflow-hidden">
+        <div class="bar-fill h-full ${color}" style="width:${pct}%"></div>
+      </div>
+      <div class="mt-1.5 text-right text-[11px] text-neutral-500">${pct}%</div>
+    `;
+    container.appendChild(el);
+  }
+
+  const oPct = totalTgt ? Math.round((totalCur / totalTgt) * 100) : 0;
+  document.getElementById("overall-current").textContent = totalCur;
+  document.getElementById("overall-target").textContent = totalTgt;
+  document.getElementById("overall-pct").textContent = oPct;
+  document.getElementById("overall-bar").style.width = oPct + "%";
+  document.getElementById("last-updated").textContent = "마지막 갱신: " + (data.updated_at || "—");
+}
+
+async function tick() {
+  try {
+    const res = await fetch("status.json?t=" + Date.now());
+    const data = await res.json();
+    render(data);
+  } catch (e) {
+    document.getElementById("last-updated").textContent = "갱신 실패 (재시도 중)";
+  }
+}
+tick();
+setInterval(tick, 5000);
+</script>
+</body>
+</html>

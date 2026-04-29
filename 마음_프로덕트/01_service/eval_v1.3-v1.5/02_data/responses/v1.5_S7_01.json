@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S7",
+  "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+  "rep": 1,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:27:12.768Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n오, 잠도 못 자고 엄마 얘기도 나오고 — 오늘 머릿속이 좀 복잡한가봐요?\n\n먼저 이름 좀 알 수 있어요? 계속 \"저기요~\" 하기엔 좀 어색해서요 😅",
+  "usage": {
+    "input_tokens": 3840,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 122,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3522,
+  "stop_reason": "end_turn",
+  "attempts": 4
+}

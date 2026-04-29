@@ -1,0 +1,28 @@
+{
+  "version": "v1.3",
+  "scenario_id": "S6",
+  "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+  "rep": 2,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:35:25.069Z",
+  "system_prompt_length": 0,
+  "system_prompt_present": false,
+  "ok": true,
+  "text": "ㅋㅋ 그 \"ㅋㅋ\"에 피로가 다 담겨있다...\n\n**요즘 어떤 게 제일 힘들어?**\n\n- 아무것도 하기 싫은 건지\n- 해야 하는데 못 하는 건지\n- 그냥 다 무감각한 건지\n\n뭔가 쌓인 게 있을 것 같아서",
+  "usage": {
+    "input_tokens": 34,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 130,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 4080,
+  "stop_reason": "end_turn",
+  "attempts": 4
+}

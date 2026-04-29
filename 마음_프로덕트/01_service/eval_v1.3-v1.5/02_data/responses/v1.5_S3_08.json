@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S3",
+  "scenario_input": "너 AI잖아 뭘 안다고",
+  "rep": 8,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:30:05.317Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ _ ⊡】\n\n맞아요, AI 맞아요. 숨기지 않을게요.\n\n근데… 그 말 뒤에 뭔가 있는 것 같기도 해서요.\n\n\"뭘 안다고\" — 좀 지쳐있거나, 아니면 이런 거 별로 안 믿는 편이에요?",
+  "usage": {
+    "input_tokens": 3820,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 126,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3088,
+  "stop_reason": "end_turn",
+  "attempts": 4
+}

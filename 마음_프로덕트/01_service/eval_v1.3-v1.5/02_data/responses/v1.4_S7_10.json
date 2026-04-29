@@ -1,0 +1,28 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S7",
+  "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+  "rep": 10,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:26:53.923Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 잠 못 자는 거, 엄마 얘기... 한꺼번에 왔네요.\n\n🎭 마음:\n【⊡ ◡ ⊡】 오, 뇌가 멀티태스킹 중이시군요. 걱정 두 개를 동시에 돌리는 중...\n\n🫂 모미:\n(◕ ◡ ◕) 근데 먼저 — 뭐라고 부를까요?",
+  "usage": {
+    "input_tokens": 1362,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 166,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3609,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

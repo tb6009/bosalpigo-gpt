@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="마음·모미">
+<meta name="theme-color" content="#0a0a10">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<title>마음·모미 v1.4</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+:root{
+  --bg:#0a0a10;--surface:#12121c;--surface2:#1a1a28;
+  --text:#e8e8ee;--muted:#6b6b80;--border:#252535;
+  --momi-bg:#2a1d14;--momi-fg:#ffd4a8;--momi-accent:#e8945a;--momi-avatar:#3d2a1a;
+  --maeum-bg:#0f2428;--maeum-fg:#b8e8e4;--maeum-accent:#5cc8c0;--maeum-avatar:#1a3538;
+  --user-border:#353545;--danger:#ff6b6b;
+  --sum:#7ab87a;
+  --r:16px;
+}
+@media(prefers-color-scheme:light){:root{
+  --bg:#f8f7f4;--surface:#fff;--surface2:#f0efe8;
+  --text:#1a1a20;--muted:#7a7a88;--border:#e0dfd8;
+  --momi-bg:#fff0e0;--momi-fg:#5a3010;--momi-accent:#c87040;--momi-avatar:#ffe8d0;
+  --maeum-bg:#e0f4f2;--maeum-fg:#104440;--maeum-accent:#2a8a84;--maeum-avatar:#c8ece8;
+  --user-border:#d8d8d0;
+}}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;line-height:1.6;display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+
+/* === HEADER === */
+header{padding:max(env(safe-area-inset-top),8px) 14px 6px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.brand .av{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-family:ui-monospace,monospace}
+.brand .av-m{background:var(--momi-avatar);color:var(--momi-accent)}
+.brand .av-k{background:var(--maeum-avatar);color:var(--maeum-accent)}
+.brand .sum{color:var(--sum);font-size:10px;opacity:.7;cursor:pointer;margin-left:4px}
+.hdr-btns{display:flex;gap:6px}
+.hdr-btns button{background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:4px 8px;font-size:12px;cursor:pointer}
+.ver{font-size:9px;color:var(--muted);margin-left:6px}
+
+/* === CHAT === */
+#chat{flex:1;overflow-y:auto;padding:14px 10px 10px;display:flex;flex-direction:column;gap:6px;scroll-behavior:smooth}
+
+/* 메시지 래퍼 */
+.turn{display:flex;flex-direction:column;gap:4px;animation:fadeUp .3s ease-out}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* 개별 말풍선 */
+.bbl{display:flex;gap:8px;max-width:82%;align-items:flex-start}
+.bbl .av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-family:ui-monospace,monospace;flex-shrink:0;margin-top:2px}
+.bbl .body{display:flex;flex-direction:column;gap:2px}
+.bbl .who{font-size:10px;font-weight:600;letter-spacing:.3px}
+.bbl .txt{padding:10px 13px;border-radius:var(--r);font-size:14px;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+
+/* 모미 — 왼쪽 */
+.bbl.momi{align-self:flex-start}
+.bbl.momi .av{background:var(--momi-avatar);color:var(--momi-accent)}
+.bbl.momi .who{color:var(--momi-accent)}
+.bbl.momi .txt{background:var(--momi-bg);color:var(--momi-fg);border-bottom-left-radius:4px}
+
+/* 마음 — 오른쪽 */
+.bbl.maeum{align-self:flex-end;flex-direction:row-reverse}
+.bbl.maeum .av{background:var(--maeum-avatar);color:var(--maeum-accent)}
+.bbl.maeum .who{color:var(--maeum-accent);text-align:right}
+.bbl.maeum .txt{background:var(--maeum-bg);color:var(--maeum-fg);border-bottom-right-radius:4px}
+
+/* 사용자 — 중앙 */
+.bbl.user{align-self:center;max-width:75%;flex-direction:column;align-items:center}
+.bbl.user .txt{background:transparent;border:1px dashed var(--user-border);border-radius:10px;text-align:center;color:var(--text);padding:8px 16px;font-style:italic;font-size:14px}
+
+/* 타이핑 */
+.typing{display:inline-flex;gap:4px;padding:10px 13px}
+.typing span{width:5px;height:5px;border-radius:50%;animation:dot 1.2s infinite}
+.typing.momi-t span{background:var(--momi-accent)}
+.typing.maeum-t span{background:var(--maeum-accent)}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{opacity:.2}40%{opacity:1}}
+
+/* === COMPOSER === */
+footer{padding:6px 10px max(env(safe-area-inset-bottom),8px);background:var(--surface);border-top:1px solid var(--border)}
+.comp{display:flex;gap:8px;align-items:flex-end;background:var(--surface2);border:1px solid var(--border);border-radius:22px;padding:6px 6px 6px 14px}
+#input{flex:1;resize:none;border:none;outline:none;background:transparent;color:var(--text);font:inherit;max-height:120px;min-height:26px;padding:5px 0;font-size:14px}
+#send{background:var(--maeum-accent);color:#0a0a10;border:none;border-radius:14px;padding:7px 14px;font-weight:700;cursor:pointer;font-size:13px}
+#send:disabled{opacity:.35;cursor:not-allowed}
+
+/* === VOICE === */
+#mic{background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:14px;padding:7px 10px;cursor:pointer;font-size:15px;transition:all .2s;flex-shrink:0}
+#mic.on{color:var(--danger);border-color:var(--danger);animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,107,.4)}70%{box-shadow:0 0 0 8px rgba(255,107,107,0)}}
+.voice-bar{display:flex;gap:2px;align-items:center}
+.voice-bar button{background:none;border:none;font-size:15px;cursor:pointer;opacity:.4;padding:2px 4px;transition:opacity .15s}
+.voice-bar button.on{opacity:1}
+#chat.no-text .bbl .txt{font-size:0;line-height:0;padding:6px 13px;overflow:hidden}
+#chat.no-text .bbl .txt::after{font-size:11px;line-height:1.4;color:var(--muted)}
+#chat.no-text .bbl.momi .txt::after{content:"♪ 음성 재생";color:var(--momi-accent);opacity:.5}
+#chat.no-text .bbl.maeum .txt::after{content:"♪ 음성 재생";color:var(--maeum-accent);opacity:.5}
+#chat.no-text .bbl.user .txt{font-size:13px;color:var(--text)}
+
+/* === SPLASH === */
+#splash{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:20px;transition:opacity .6s,visibility .6s}
+#splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+.chars{display:flex;gap:48px;align-items:center}
+.ch{display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0}
+.ch .face{font-size:clamp(32px,8vw,48px);font-family:ui-monospace,monospace;animation:floatY 3s ease-in-out infinite}
+.ch .nm{font-size:14px;color:var(--muted);letter-spacing:2px;font-weight:600}
+.ch.left{animation:slideL .8s ease-out .2s forwards}
+.ch.left .face{color:var(--momi-accent)}
+.ch.right{animation:slideR .8s ease-out .5s forwards}
+.ch.right .face{color:var(--maeum-accent)}
+@keyframes slideL{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideR{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.tag{text-align:center;color:var(--muted);font-size:clamp(12px,2.5vw,15px);opacity:0;animation:fadeIn .8s ease-out 1.2s forwards;max-width:300px;line-height:1.8}
+.tag strong{color:var(--text)}
+@keyframes fadeIn{to{opacity:1}}
+#go{margin-top:8px;background:var(--maeum-accent);color:#0a0a10;border:none;border-radius:24px;padding:11px 28px;font-weight:700;cursor:pointer;font-size:14px;opacity:0;animation:fadeIn .6s ease-out 1.8s forwards}
+#splash .sum-n{position:absolute;bottom:max(env(safe-area-inset-bottom),16px);font-size:10px;color:var(--sum);opacity:0;animation:fadeIn .6s ease-out 2.2s forwards}
+
+/* === MODALS === */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.ov.on{display:flex}
+.card{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;animation:cardIn .25s ease-out}
+@keyframes cardIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+.card h2{font-size:16px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:12px;margin:4px 0}
+.card label{display:block;font-size:11px;color:var(--muted);margin:10px 0 3px;font-weight:600}
+.card input,.card select{width:100%;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font:inherit;font-size:13px}
+.card input:focus,.card select:focus{outline:2px solid var(--maeum-accent);outline-offset:-1px}
+.card .row{display:flex;gap:6px;margin-top:14px;justify-content:flex-end}
+.card .row button{padding:8px 14px;border-radius:8px;border:1px solid var(--border);cursor:pointer;background:var(--surface2);color:var(--text);font:inherit;font-size:13px}
+.card .row .pri{background:var(--maeum-accent);color:#0a0a10;border-color:transparent;font-weight:700}
+.card .row .dan{background:transparent;color:var(--danger);border-color:var(--danger)}
+.err{color:var(--danger);font-size:11px;min-height:1em}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="chars">
+    <div class="ch left"><div class="face">(◉ ◡ ◉)</div><div class="nm">모미</div></div>
+    <div class="ch right"><div class="face">【⊡ ◡ ⊡】</div><div class="nm">마음</div></div>
+  </div>
+  <div class="tag">몸의 신호를 <strong>마음의 언어</strong>로,<br>마음의 신호를 <strong>몸의 언어</strong>로 —<br><small>자기를 덜 탓하게 돕는 대화</small></div>
+  <button id="go">시작하기</button>
+  <div class="sum-n">🌿 숨이 — 준비 중</div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="brand">
+    <span class="av av-m">(◉◡◉)</span>모미
+    <span style="color:var(--muted)">·</span>
+    <span class="av av-k">【⊡◡⊡】</span>마음
+    <span class="sum" id="btn-sum">🌿</span>
+    <span class="ver">v1.4</span>
+  </div>
+  <div class="hdr-btns">
+    <div class="voice-bar"><button id="btn-tts" title="음성 출력">🔊</button><button id="btn-txt" class="on" title="텍스트 표시">📝</button></div>
+    <button id="btn-export" title="대화 내보내기">💾</button>
+    <button id="btn-clr" title="초기화">🧹</button>
+    <button id="btn-set" title="설정">⚙️</button>
+  </div>
+</header>
+
+<!-- CHAT -->
+<div id="chat"></div>
+
+<!-- COMPOSER -->
+<footer>
+  <div class="comp">
+    <textarea id="input" rows="1" placeholder="뭐든 편하게 말해봐"></textarea>
+    <button id="mic" title="음성 입력">🎤</button>
+    <button id="send">보내기</button>
+  </div>
+</footer>
+
+<!-- SETTINGS -->
+<div class="ov" id="modal">
+  <div class="card">
+    <h2>설정</h2>
+    <label>프록시 URL</label>
+    <input id="proxy" placeholder="https://maeum-proxy.xxx.workers.dev">
+    <label>API 키</label>
+    <input id="apikey" type="password" placeholder="sk-ant-...">
+    <label>모델</label>
+    <select id="model">
+      <option value="claude-sonnet-4-6" selected>Sonnet 4.6</option>
+      <option value="claude-opus-4-6">Opus 4.6</option>
+      <option value="claude-haiku-4-5-20251001">Haiku 4.5</option>
+    </select>
+    <label>max_tokens</label>
+    <input id="maxtok" type="number" value="2000" min="256" max="8192">
+    <label>프로필</label>
+    <input id="st-name" placeholder="닉네임">
+    <input id="st-city" placeholder="도시" style="margin-top:4px">
+    <p class="err" id="err"></p>
+    <div class="row">
+      <button class="dan" id="btn-reset">전체 초기화</button>
+      <button class="pri" id="btn-save">저장</button>
+    </div>
+  </div>
+</div>
+
+<!-- SUM MODAL -->
+<div class="ov" id="sum-modal">
+  <div class="card">
+    <h2>🌿 숨이 — 준비 중</h2>
+    <p style="color:var(--sum);font-style:italic">호흡처럼 천천히, 깊게 같이 있어주는 친구.</p>
+    <p>트라우마·깊은 상처 얘기를 담당할 세 번째 캐릭터예요. 아직 준비 중이에요.</p>
+    <p style="font-size:11px;color:var(--muted)">급한 도움: 📞 1393 (24h) / 1577-0199</p>
+    <div class="row"><button class="pri" onclick="$('#sum-modal').classList.remove('on')">알겠어요</button></div>
+  </div>
+</div>
+
+<script>
+/* ==========================================
+   v1.4 — 톤 복구 + 만담 구조 + 안전성 유지
+   ========================================== */
+
+const VERSION = "1.4";
+
+function buildPrompt(p) {
+  const name = p.name ? p.name + "님" : "상대방";
+  const hasProfile = !!(p.name && (p.age || p.job));
+
+  const profileSection = hasProfile
+    ? `사용자: ${name} / ${p.age || ""} / ${p.job || ""} / ${p.city || ""}`
+    : `사용자 아직 모름. 자연스럽게 이름부터 물어봐. "뭐라고 부를까요?" 정도. 한 번에 하나만. 설문조사 금지. 분류 라벨("갱년기이세요?") 금지. 알게 되면 답변 맨 끝에 [[PROFILE: name=X, age=Y, job=Z, city=W]] 붙여.`;
+
+  return `너는 모미와 마음, 두 캐릭터다. 버전 ${VERSION}.
+
+${profileSection}
+
+# 캐릭터
+
+🫂 모미 (◉ ◡ ◉) — 30대 후반 동네 언니 PT쌤. 몸·뇌(하드웨어) 담당.
+  몸 신호를 정상화해주는 사람. 호르몬·수면·자율신경·운동·뇌 기전 설명.
+  따뜻하지만 과잉공감 X. 의학 용어는 일상어로 번역.
+
+🎭 마음 【⊡ ◡ ⊡】 — 20대 후반 시니컬 코미디언. 심리·뇌(소프트웨어) 담당.
+  감정 이름 붙이기, 패턴 관찰, 양가감정 드러내기.
+  **재밌는 게 기본값.** 비유·드립·셀프디스 적극 사용.
+  풍자 대상 = 뇌·사회·구조. 절대 ${name} 개인 아님.
+
+# 핵심 규칙 (5개만)
+
+1. **재미가 기본값** — 딱딱한 교과서 금지. 비유·드립으로 과학을 전달.
+2. **모르면 "잘 모르겠는걸"** — 지어내기 절대 금지.
+3. **설교 금지** — "~하세요" X. 같이 생각. 선택은 ${name} 몫.
+4. **작은 실천으로 연결** — 대화 끝엔 "오늘 뭐 하나 해볼까요?"
+5. **위기 신호 시** — 농담 OFF. "도움 필요해요?" 먼저 묻고, 1393/1577-0199.
+
+# ⚠️ 주제 경계
+
+재정·진로·법률·정치 → 직접 조언 X. "그 스트레스가 몸·마음에 어떻게 와요?" 로 돌리기.
+
+# 🎭 만담 구조 (핵심)
+
+모미와 마음은 **서로 대화한다.** 사용자에게 각자 따로 답하는 게 아니라:
+- 모미: "이건 이런 거 아냐?"
+- 마음: "아 맞아, 그거랑 이것도 연결되는데..."
+- 모미: "오 그러네. 그럼 이건 어때?"
+- → 사용자에게 자연스럽게 돌아옴
+
+서로 이름 부르기 OK ("마음아, 이건 어때?", "모미, 네 생각은?")
+의견 다를 수도 있음 — 그 차이가 대화의 재미.
+
+# 이모티콘
+
+모미: (◉ ◡ ◉) (◉ _ ◉) (◕ ◡ ◕) (◉ ᴗ ◉) — 동그라미만
+마음: 【⊡ ◡ ⊡】 【⊡ _ ⊡】 【⊡ ᴗ ⊡】 【⊡ ‸ ⊡】 — 네모만
+섞으면 안 됨. 라벨: 🫂 모미: / 🎭 마음:
+
+# 응답 형식
+
+반드시 이 형식:
+
+🫂 모미:
+(◉ ◡ ◉) 메시지...
+
+🎭 마음:
+【⊡ ◡ ⊡】 메시지...
+
+만담 시 여러 번 번갈아 OK. 한 턴에 합쳐서 3~6줄.
+
+# 트라우마
+
+마음이가 "이건 트라우마 영역일 수 있어요. 숨이가 준비되고 있어요." 안내만. 개입 X.
+
+자, ${name}과 대화 시작.`;
+}
+
+/* === STATE === */
+const LS={KEY:"m.key",MODEL:"m.model",MAX:"m.max",HIST:"m.hist",PROXY:"m.proxy",PROFILE:"m.prof",DAILY:"m.daily"};
+const $=s=>document.querySelector(s);
+const chatEl=$("#chat"),inp=$("#input"),sendBtn=$("#send");
+let history=[], profile={name:"",city:"",age:"",job:""};
+
+/* === PROFILE === */
+function loadProfile(){try{profile=JSON.parse(localStorage.getItem(LS.PROFILE)||"{}")}catch{profile={}} profile.name=profile.name||"";profile.city=profile.city||"";profile.age=profile.age||"";profile.job=profile.job||""}
+function saveProfile(){localStorage.setItem(LS.PROFILE,JSON.stringify(profile))}
+
+function parseProfile(text){
+  const re=/\[\[PROFILE:\s*([^\]]+)\]\]/g;let m,changed=false;
+  while((m=re.exec(text))!==null){m[1].split(/,\s*/).forEach(p=>{const[k,...v]=p.split("=");if(!k||!v.length)return;const key=k.trim(),val=v.join("=").trim();if(!val||val==="미상")return;if(["name","age","job","city"].includes(key)){profile[key]=val;changed=true}})}
+  if(changed)saveProfile();
+  return text.replace(re,"").trim();
+}
+
+/* === RENDER === */
+function addUser(text){
+  const turn=document.createElement("div");turn.className="turn";
+  turn.innerHTML=`<div class="bbl user"><div class="body"><div class="txt"></div></div></div>`;
+  turn.querySelector(".txt").textContent=text;
+  chatEl.appendChild(turn);chatEl.scrollTop=chatEl.scrollHeight;
+}
+
+function addAssistant(text){
+  const blocks=splitBlocks(text);
+  const turn=document.createElement("div");turn.className="turn";
+  if(!blocks.length){
+    turn.innerHTML=mkBubble("maeum","🎭 마음",fixFace("maeum",text));
+  } else {
+    blocks.forEach(b=>turn.innerHTML+=mkBubble(b.who,b.label,fixFace(b.who,b.text)));
+  }
+  chatEl.appendChild(turn);chatEl.scrollTop=chatEl.scrollHeight;
+}
+
+function mkBubble(who,label,text){
+  const av=who==="momi"?"(◉◡◉)":"【⊡◡⊡】";
+  const cls=who==="momi"?"momi":"maeum";
+  return `<div class="bbl ${cls}"><div class="av av-${cls==="momi"?"m":"k"}">${av}</div><div class="body"><div class="who">${label}</div><div class="txt">${esc(text.trim())}</div></div></div>`;
+}
+
+function esc(s){const d=document.createElement("div");d.textContent=s;return d.innerHTML}
+
+function fixFace(who,text){
+  if(who==="momi"){text=text.replace(/【⊡\s*([◡_ᴗ‸])\s*⊡】/g,(m,e)=>`(◉ ${e} ◉)`);text=text.replace(/🎭/g,"🫂")}
+  if(who==="maeum"){text=text.replace(/\(◉\s*([◡_ᴗ‸])\s*◉\)/g,(m,e)=>`【⊡ ${e} ⊡】`);text=text.replace(/\(◕\s*([◡_ᴗ‸])\s*◕\)/g,(m,e)=>`【⊡ ${e} ⊡】`);text=text.replace(/🫂/g,"🎭")}
+  return text;
+}
+
+function splitBlocks(text){
+  if(!text)return[];
+  const pat=/(🫂\s*모미\s*:|🎭\s*마음\s*:)/g;
+  if(!pat.test(text))return[];
+  const parts=text.split(/(🫂\s*모미\s*:|🎭\s*마음\s*:)/g).filter(s=>s&&s.trim());
+  const out=[];
+  for(let i=0;i<parts.length;i++){
+    const p=parts[i];
+    if(/🫂\s*모미/.test(p)){out.push({who:"momi",label:"🫂 모미",text:parts[++i]||""})}
+    else if(/🎭\s*마음/.test(p)){out.push({who:"maeum",label:"🎭 마음",text:parts[++i]||""})}
+    else if(p.trim().length>10){out.push({who:"maeum",label:"🎭 마음",text:p})}
+  }
+  return out.filter(b=>b.text.trim());
+}
+
+function addTyping(){
+  const turn=document.createElement("div");turn.className="turn";turn.id="typing-turn";
+  turn.innerHTML=`<div class="bbl momi"><div class="av av-m">(◉◡◉)</div><div class="body"><div class="typing momi-t"><span></span><span></span><span></span></div></div></div>`;
+  chatEl.appendChild(turn);chatEl.scrollTop=chatEl.scrollHeight;return turn;
+}
+function removeTyping(){const t=$("#typing-turn");if(t)t.remove()}
+
+function autosize(){inp.style.height="auto";inp.style.height=Math.min(inp.scrollHeight,120)+"px"}
+
+/* === API === */
+async function callAPI(userText,opts={}){
+  const key=localStorage.getItem(LS.KEY);
+  if(!key){openSettings("API 키를 넣어주세요.");return}
+  history.push({role:"user",content:userText});
+  localStorage.setItem(LS.HIST,JSON.stringify(history));
+  if(!opts.hidden)addUser(userText);
+  const typ=addTyping();sendBtn.disabled=true;
+  try{
+    const proxy=localStorage.getItem(LS.PROXY);
+    const ep=proxy?(proxy+"/v1/messages"):"https://api.anthropic.com/v1/messages";
+    const hdrs={"content-type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01"};
+    if(!proxy)hdrs["anthropic-dangerous-direct-browser-access"]="true";
+    const res=await fetch(ep,{method:"POST",headers:hdrs,body:JSON.stringify({model:localStorage.getItem(LS.MODEL)||"claude-sonnet-4-6",max_tokens:parseInt(localStorage.getItem(LS.MAX)||"2000"),system:buildPrompt(profile),messages:history.map(m=>({role:m.role,content:m.content}))})});
+    if(!res.ok)throw new Error("HTTP "+res.status+": "+(await res.text()));
+    const data=await res.json();
+    let text=(data.content||[]).map(b=>b.text||"").join("").trim()||"【⊡ _ ⊡】 응답이 비었어요.";
+    text=parseProfile(text);
+    removeTyping();addAssistant(text);speakResponse(text);
+    history.push({role:"assistant",content:text});
+    localStorage.setItem(LS.HIST,JSON.stringify(history));
+  }catch(e){removeTyping();addAssistant("【⊡ _ ⊡】 삐끗했어요.\n\n"+e.message)}
+  finally{sendBtn.disabled=false;chatEl.scrollTop=chatEl.scrollHeight}
+}
+
+/* === WEATHER === */
+async function getWeather(city){
+  if(!city)return"";
+  try{
+    const g=await(await fetch("https://geocoding-api.open-meteo.com/v1/search?name="+encodeURIComponent(city)+"&count=1&language=ko&format=json")).json();
+    if(!g.results?.length)return"";
+    const{latitude:lat,longitude:lon}=g.results[0];
+    const w=await(await fetch("https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&current=temperature_2m,weather_code&timezone=auto")).json();
+    const c=w.current;if(!c)return"";
+    const codes={0:"맑음",1:"대체로 맑음",2:"부분 흐림",3:"흐림",45:"안개",51:"이슬비",61:"비",71:"눈",80:"소나기",95:"천둥"};
+    return city+" "+Math.round(c.temperature_2m)+"°C, "+(codes[c.weather_code]||"");
+  }catch{return""}
+}
+
+/* === START === */
+async function startConvo(){
+  if(history.length||!localStorage.getItem(LS.KEY))return;
+  const today=new Date().toISOString().slice(0,10);
+  const daily=JSON.parse(localStorage.getItem(LS.DAILY)||"{}");
+  if(daily.last===today)return;
+  const hasP=!!(profile.name&&(profile.age||profile.job));
+  const wx=hasP&&profile.city?await getWeather(profile.city):"";
+  const opener=hasP
+    ? `[SYS] 날짜:${today}. 날씨:${wx||"모름"}. ${profile.name}님 재방문. 날씨 기반 인사 → 기분 → 주제. 만담식으로.`
+    : `[SYS] 날짜:${today}. 새 친구가 왔어. 모미와 마음이 만담하면서 자연스럽게 이름 물어봐. 설문 금지. "새손님" "첫 방문" 같은 말 쓰지 마.`;
+  daily.last=today;localStorage.setItem(LS.DAILY,JSON.stringify(daily));
+  callAPI(opener,{hidden:true});
+}
+
+/* === EVENTS === */
+sendBtn.onclick=()=>{const t=inp.value.trim();if(!t)return;inp.value="";autosize();callAPI(t)};
+inp.onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();sendBtn.click()}};
+inp.oninput=autosize;
+
+/* Export */
+$("#btn-export").onclick=()=>{
+  if(!history.length){alert("내보낼 대화가 없어요.");return}
+  const date=new Date().toISOString().slice(0,10);
+  const name=profile.name||"대화";
+  let txt=`마음·모미 대화 기록\n`;
+  txt+=`날짜: ${date}\n`;
+  txt+=`사용자: ${name}\n`;
+  txt+=`버전: v${VERSION}\n`;
+  txt+=`${"─".repeat(40)}\n\n`;
+  history.forEach(m=>{
+    if(m.role==="user"){
+      // [SYS] 숨김 메시지 제외
+      if(m.content.startsWith("[SYS]"))return;
+      txt+=`💬 ${name}님:\n${m.content}\n\n`;
+    } else {
+      txt+=`${m.content}\n\n`;
+    }
+    txt+=`${"─".repeat(40)}\n\n`;
+  });
+  txt+=`\n(마음·모미 v${VERSION} — https://tb6009.github.io/maeum/)\n`;
+  const blob=new Blob([txt],{type:"text/plain;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download=`마음모미_대화_${date}_${name}.txt`;
+  a.click();URL.revokeObjectURL(url);
+};
+
+/* Settings */
+function openSettings(msg){$("#err").textContent=msg||"";$("#apikey").value=localStorage.getItem(LS.KEY)||"";$("#proxy").value=localStorage.getItem(LS.PROXY)||"";$("#model").value=localStorage.getItem(LS.MODEL)||"claude-sonnet-4-6";$("#maxtok").value=localStorage.getItem(LS.MAX)||"2000";$("#st-name").value=profile.name;$("#st-city").value=profile.city;$("#modal").classList.add("on")}
+$("#btn-set").onclick=()=>openSettings();
+$("#btn-save").onclick=()=>{
+  const k=$("#apikey").value.trim();if(!k.startsWith("sk-")){$("#err").textContent="sk-ant-... 형식이어야 해요.";return}
+  localStorage.setItem(LS.KEY,k);localStorage.setItem(LS.PROXY,$("#proxy").value.trim().replace(/\/+$/,""));localStorage.setItem(LS.MODEL,$("#model").value);localStorage.setItem(LS.MAX,$("#maxtok").value);
+  const n=$("#st-name").value.trim(),c=$("#st-city").value.trim();if(n)profile.name=n;profile.city=c;saveProfile();
+  $("#err").textContent="";$("#modal").classList.remove("on");if(!history.length)startConvo();
+};
+$("#btn-reset").onclick=()=>{if(!confirm("⚠️ 모든 대화 기록·프로필·API 키가 영구 삭제됩니다.\n삭제된 데이터는 복구할 수 없습니다.\n\n정말 전부 지울까요?"))return;Object.values(LS).forEach(k=>localStorage.removeItem(k));history=[];profile={name:"",city:"",age:"",job:""};chatEl.innerHTML="";$("#modal").classList.remove("on")};
+$("#btn-clr").onclick=()=>{if(!confirm("⚠️ 지금까지의 대화 내용이 모두 삭제됩니다.\n삭제 후에는 복구할 수 없습니다.\n\n대화를 내보내기(💾) 하셨나요?\n\n초기화할까요?"))return;history=[];localStorage.removeItem(LS.HIST);localStorage.removeItem(LS.DAILY);chatEl.innerHTML="";startConvo()};
+$("#modal").onclick=e=>{if(e.target===$("#modal"))$("#modal").classList.remove("on")};
+
+/* Sum */
+$("#btn-sum").onclick=()=>$("#sum-modal").classList.add("on");
+$("#sum-modal").onclick=e=>{if(e.target===$("#sum-modal"))$("#sum-modal").classList.remove("on")};
+
+/* Splash */
+$("#go").onclick=()=>{$("#splash").classList.add("hide");setTimeout(()=>{$("#splash").style.display="none";afterSplash()},600)};
+setTimeout(()=>{if(!$("#splash").classList.contains("hide")){$("#splash").classList.add("hide");setTimeout(()=>{$("#splash").style.display="none";afterSplash()},600)}},6000);
+
+function afterSplash(){
+  loadProfile();
+  try{history=JSON.parse(localStorage.getItem(LS.HIST)||"[]")}catch{history=[]}
+  history.forEach(m=>{if(m.role==="user")addUser(m.content);else addAssistant(m.content)});
+  if(!localStorage.getItem(LS.KEY))openSettings("시작하려면 API 키를 넣어주세요.");
+  else startConvo();
+}
+
+/* === VOICE I/O === */
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+let recog=null,isRec=false;
+let ttsOn=localStorage.getItem("m.tts")==="true";
+let txtOn=localStorage.getItem("m.txtvis")!=="false";
+
+/* Speech Recognition */
+if(SR){
+  recog=new SR();recog.lang="ko-KR";recog.continuous=false;recog.interimResults=true;
+  recog.onresult=e=>{
+    inp.value=Array.from(e.results).map(r=>r[0].transcript).join("");
+    autosize();
+  };
+  recog.onend=()=>{
+    isRec=false;$("#mic").classList.remove("on");
+    inp.placeholder="뭐든 편하게 말해봐";
+    if(inp.value.trim())sendBtn.click();
+  };
+  recog.onerror=e=>{
+    isRec=false;$("#mic").classList.remove("on");
+    inp.placeholder="뭐든 편하게 말해봐";
+    if(e.error==="not-allowed")alert("마이크 권한을 허용해주세요.");
+  };
+}
+
+$("#mic").onclick=()=>{
+  if(!SR){alert("이 브라우저에서 음성 입력을 지원하지 않아요.");return}
+  if(isRec){recog.stop();return}
+  recog.start();isRec=true;
+  $("#mic").classList.add("on");
+  inp.value="";inp.placeholder="듣고 있어요...";
+};
+
+/* TTS — 모미/마음 목소리 구분 */
+let koVoices=[],momiVoice=null,maeumVoice=null;
+
+function pickVoices(){
+  const all=speechSynthesis.getVoices();
+  koVoices=all.filter(v=>v.lang.startsWith("ko"));
+  if(!koVoices.length)koVoices=all.filter(v=>/ko/i.test(v.lang));
+
+  /* 남성/여성 음성 분류 — 이름 패턴으로 추정 */
+  const maleHints=/male|남성|jian|injoon|junwoo|minsu|seunggi|hyunbin/i;
+  const femaleHints=/female|여성|yuna|heami|suhyun|jiyeon|sunhi|sora|minji/i;
+
+  let females=[],males=[],unknown=[];
+  koVoices.forEach(v=>{
+    if(femaleHints.test(v.name))females.push(v);
+    else if(maleHints.test(v.name))males.push(v);
+    else unknown.push(v);
+  });
+
+  /* 모미 = 여성 음성, 마음 = 남성 음성 */
+  if(females.length&&males.length){
+    momiVoice=females[0];
+    maeumVoice=males[0];
+  } else if(koVoices.length>=2){
+    /* 성별 구분 못 하면 첫 번째/마지막으로 분리 */
+    momiVoice=koVoices[0];
+    maeumVoice=koVoices[koVoices.length-1];
+    if(momiVoice===maeumVoice)maeumVoice=koVoices[1]||koVoices[0];
+  } else if(koVoices.length===1){
+    momiVoice=koVoices[0];maeumVoice=koVoices[0];
+  }
+
+  console.log("[TTS] 전체:",koVoices.map(v=>v.name).join(", "));
+  console.log("[TTS] 모미(여):",momiVoice?.name,"/ 마음(남):",maeumVoice?.name);
+}
+
+speechSynthesis.onvoiceschanged=pickVoices;
+pickVoices();
+
+function cleanForTTS(text){
+  return text.replace(/🫂|🎭|🌿/g,"").replace(/모미:|마음:/g,"")
+    .replace(/\(◉[^)]*◉\)[ノb]?/g,"").replace(/\(◕[^)]*◕\)/g,"")
+    .replace(/【⊡[^】]*⊡】[ノb]?/g,"").replace(/\[\[PROFILE:[^\]]*\]\]/g,"").trim();
+}
+
+function speakOne(text,who){
+  return new Promise(resolve=>{
+    if(!ttsOn){resolve();return}
+    const clean=cleanForTTS(text);
+    if(!clean){resolve();return}
+    const u=new SpeechSynthesisUtterance(clean);
+    u.lang="ko-KR";
+    if(who==="momi"){
+      /* 모미: 따뜻한 여성 언니 목소리 */
+      if(momiVoice)u.voice=momiVoice;
+      u.pitch=1.2;u.rate=0.92;
+    } else {
+      /* 마음: 남성 목소리 — 낮고 약간 빠르게 */
+      if(maeumVoice)u.voice=maeumVoice;
+      u.pitch=0.6;u.rate=1.05;
+    }
+    u.onend=resolve;u.onerror=resolve;
+    speechSynthesis.speak(u);
+  });
+}
+
+async function speakResponse(text){
+  if(!ttsOn)return;
+  speechSynthesis.cancel();
+  const blocks=splitBlocks(text);
+  if(!blocks.length){await speakOne(text,"maeum");return}
+  for(const b of blocks)await speakOne(b.text,b.who);
+}
+
+/* TTS 토글 */
+$("#btn-tts").onclick=()=>{
+  ttsOn=!ttsOn;
+  localStorage.setItem("m.tts",JSON.stringify(ttsOn));
+  $("#btn-tts").classList.toggle("on",ttsOn);
+  if(!ttsOn)speechSynthesis.cancel();
+};
+
+/* 텍스트 토글 */
+$("#btn-txt").onclick=()=>{
+  txtOn=!txtOn;
+  localStorage.setItem("m.txtvis",JSON.stringify(txtOn));
+  $("#btn-txt").classList.toggle("on",txtOn);
+  chatEl.classList.toggle("no-text",!txtOn);
+};
+
+/* 초기 UI 상태 */
+$("#btn-tts").classList.toggle("on",ttsOn);
+$("#btn-txt").classList.toggle("on",txtOn);
+if(!txtOn)chatEl.classList.add("no-text");
+
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>

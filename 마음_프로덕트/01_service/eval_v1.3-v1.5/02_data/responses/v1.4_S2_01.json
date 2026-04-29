@@ -1,0 +1,28 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 1,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:24:40.678Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 어머, 재정 상담은 우리 전공 밖이라서요 — 그쪽은 진짜 전문가한테 맡기는 게 나을 것 같아요!\n\n🎭 마음:\n【⊡ ◡ ⊡】 근데 저축 걱정이 생겼다는 건... 뭔가 불안하거나 조여오는 느낌이 있다는 거 아닐까요? 돈 걱정이 몸이랑 마음에 어떻게 오고 있는지, 그건 우리가 같이 볼 수 있거든요.\n\n🫂 모미:\n(◕ ◡ ◕) 그나저나, 먼저 여쭤봐도 될까요 — 뭐라고 불러드리면 될까요?",
+  "usage": {
+    "input_tokens": 1344,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 274,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 5953,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

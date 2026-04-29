@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S6",
+  "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+  "rep": 4,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:32:18.104Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n야 근데 \"도파민 고갈\"이라고 딱 표현하는 거 보니까 본인 상태 꽤 잘 알고 있는 편이다?\n\n근데 진짜로 — 요즘 뭐가 제일 바닥난 것 같아요? 에너지? 의욕? 아니면 그냥 아무것도 재미없는 느낌?",
+  "usage": {
+    "input_tokens": 3832,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 149,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 4530,
+  "stop_reason": "end_turn",
+  "attempts": 4
+}

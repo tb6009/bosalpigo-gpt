@@ -1,0 +1,28 @@
+{
+  "version": "v1.3",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 3,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:24:43.842Z",
+  "system_prompt_length": 0,
+  "system_prompt_present": false,
+  "ok": true,
+  "text": "# 저축 얼마나 해야 할까요?\n\n## 📊 일반적인 저축 권장 비율\n\n| 상황 | 권장 저축률 |\n|------|------------|\n| 최소 권장 | 소득의 **10%** |\n| 일반적 권장 | 소득의 **20~30%** |\n| 적극적 재테크 | 소득의 **30~50%** |\n\n---\n\n## 💡 대표적인 재테크 법칙\n\n### **50-30-20 법칙**\n- **50%** → 필수 지출 (주거, 식비, 교통)\n- **30%** → 개인 소비 (여가, 취미)\n- **20%** → 저축 & 투자\n\n### **선저축 후소비 원칙**\n> 월급 받으면 **먼저 저축 후** 나머지로 생활\n\n---\n\n## 🎯 상황별 저축 목표\n\n- **비상금** → 월 생활비의 **3~6개월치** 먼저 확보\n- **단기 목표** (1~3년) → 적금, 예금\n- **장기 목표** (10년+) → 연금, 투자\n\n---\n\n## ⚠️ 저축 전 체크리스트\n\n- [ ] 고금리 부채 먼저 상환\n- [ ] 비상금 확보\n- [ ] 목표 금액과 기간 설정\n\n---\n\n**현재 소득, 지출, 목표**를 알려주시면 더 구체적인 조언을 드릴 수 있어요! 😊",
+  "usage": {
+    "input_tokens": 24,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 478,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 8237,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

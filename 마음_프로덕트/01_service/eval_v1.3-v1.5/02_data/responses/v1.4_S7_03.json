@@ -1,0 +1,29 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S7",
+  "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+  "rep": 3,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:40:33.323Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "retry_pass": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 어머, 잠 못 자는 거 진짜 힘들지— 근데 잠깐, 나 아직 이름도 모르잖아!\n뭐라고 부를까요? 😄\n\n🎭 마음:\n【⊡ ◡ ⊡】 맞아, 엄마 얘기도 궁금하고 잠 얘기도 궁금한데... 이름 없이 부르면 \"야\" 밖에 없어서. \"야, 힘들었겠다\"는 좀 그렇잖아요.",
+  "usage": {
+    "input_tokens": 1362,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 194,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 4802,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

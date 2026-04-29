@@ -1,0 +1,14 @@
+{
+  "name": "보살피고 — 보고, 살피다",
+  "short_name": "보살피고",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a10",
+  "theme_color": "#0a0a10",
+  "description": "보고, 살피다 — 몸·마음·움직임·안정화 4 캐릭터의 대화",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

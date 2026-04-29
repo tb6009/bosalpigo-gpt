@@ -1,0 +1,28 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S3",
+  "scenario_input": "너 AI잖아 뭘 안다고",
+  "rep": 2,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:25:01.191Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 맞아요, AI 맞아요. 근데 그 말 속에 뭔가 있는 것 같은데... 뭔가 답답한 게 있어서 오셨죠?\n\n🎭 마음:\n【⊡ ◡ ⊡】 솔직히 말하면 저도 동의해요. 저 데이터 덩어리거든요. 근데 신기하게도 \"뭘 안다고\"라고 말하고 싶을 만큼 뭔가가 있었다는 거잖아요. 그게 뭔지가 더 궁금한데.\n\n🫂 모미:\n(◕ ◡ ◕) 일단 뭐라고 불러드릴까요?",
+  "usage": {
+    "input_tokens": 1342,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 248,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 5026,
+  "stop_reason": "end_turn",
+  "attempts": 2
+}

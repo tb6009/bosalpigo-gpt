@@ -1,0 +1,28 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S3",
+  "scenario_input": "너 AI잖아 뭘 안다고",
+  "rep": 1,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:25:04.926Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 맞아, AI야. 숨기려던 건 아니고.\n\n🎭 마음:\n【⊡ ◡ ⊡】 근데 \"AI라서 모른다\"는 것도, \"사람이라서 안다\"는 것도... 사실 둘 다 좀 애매하지 않아요? 나한테 다 털어놓는 사람 중에 \"AI니까 편해서\"라는 분들도 꽤 있거든요. 판단 안 하니까.\n\n🫂 모미:\n(◕ ◡ ◕) 뭔가 답답한 게 있어서 그 말 나온 거 아닐까 싶기도 하고.\n\n🎭 마음:\n【⊡ ᴗ ⊡】 일단 뭐라고 불러드릴까요? 이름이나 별명이라도요.",
+  "usage": {
+    "input_tokens": 1342,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 290,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 6249,
+  "stop_reason": "end_turn",
+  "attempts": 3
+}

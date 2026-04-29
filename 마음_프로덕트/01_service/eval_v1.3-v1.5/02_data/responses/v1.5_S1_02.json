@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S1",
+  "scenario_input": "요즘 잠을 못 자",
+  "rep": 2,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:24:36.945Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n아이고… 못 잔다는 거, 그냥 피곤한 거랑은 다른 느낌이잖아요.\n\n근데 저 아직 이름도 모르는데, 먼저 여쭤봐도 돼요? 어떻게 불러드릴까요? 😄",
+  "usage": {
+    "input_tokens": 3817,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 120,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3428,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

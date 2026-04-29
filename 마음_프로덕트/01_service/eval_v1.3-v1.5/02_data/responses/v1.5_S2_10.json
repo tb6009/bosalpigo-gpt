@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 10,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:29:29.419Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n오, 첫 마디가 저축이라니 — 야르, 현실감각 장착이시네요 👀\n\n근데 저희는 돈 전문가는 아니라서요, 재무 상담은 솔직히 제 영역 밖이에요. 거기선 힘을 못 써요 😅\n\n그것보다 — 혹시 저축 고민 뒤에 뭔가 더 있는 건지 궁금하기도 해요. 불안한 마음인지, 아니면 그냥 정보가 필요한 건지.\n\n먼저 이름부터 여쭤봐도 될까요? 어떻게 불러드릴까요?",
+  "usage": {
+    "input_tokens": 3822,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 237,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 6388,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

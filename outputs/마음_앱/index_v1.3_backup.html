@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="마음·모미" />
+<meta name="theme-color" content="#0f0f14" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="icon.svg" />
+<link rel="apple-touch-icon" href="icon.svg" />
+<title>마음·모미 — 몸과 마음의 과학</title>
+<style>
+  :root {
+    --bg: #0f0f14;
+    --panel: #171720;
+    --panel-2: #1f1f2b;
+    --text: #e8e8ee;
+    --muted: #8b8b9a;
+    --border: #2a2a38;
+    --danger: #ff6b6b;
+    --radius: 16px;
+
+    /* 모미 — 따뜻한 살구/베이지 */
+    --momi-bg: #2d2118;
+    --momi-fg: #ffd9b8;
+    --momi-accent: #ffb380;
+
+    /* 마음 — 차가운 민트/블루 */
+    --maeum-bg: #13262a;
+    --maeum-fg: #c7ecea;
+    --maeum-accent: #7ed4d0;
+
+    /* 사용자 — 무채색 */
+    --user-bg: transparent;
+    --user-fg: #e8e8ee;
+    --user-border: #3a3a48;
+
+    /* 숨이 — 준비 중, 연한 잎사귀색 */
+    --sum-fg: #b8d9b8;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fafaf7;
+      --panel: #ffffff;
+      --panel-2: #f4f4f0;
+      --text: #1a1a1e;
+      --muted: #6a6a78;
+      --border: #e2e2dc;
+
+      --momi-bg: #fff0e0;
+      --momi-fg: #7a4520;
+      --momi-accent: #d98050;
+
+      --maeum-bg: #dff1ef;
+      --maeum-fg: #1f4a48;
+      --maeum-accent: #2a8680;
+
+      --user-bg: transparent;
+      --user-fg: #1a1a1e;
+      --user-border: #d0d0cc;
+
+      --sum-fg: #507850;
+    }
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  /* ====== HEADER ====== */
+  header {
+    padding: max(env(safe-area-inset-top), 10px) 14px 8px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px;
+  }
+  .brand { display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 13px; flex-wrap: wrap; }
+  .brand .face-momi  { color: var(--momi-accent); font-family: ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: -0.5px; }
+  .brand .face-maeum { color: var(--maeum-accent); font-family: ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: -0.5px; }
+  .brand .sum { color: var(--sum-fg); font-size: 11px; opacity: 0.75; margin-left: 6px; cursor: pointer; }
+  .icon-btn {
+    background: var(--panel-2); color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px; padding: 6px 10px;
+    font-size: 13px; cursor: pointer;
+  }
+  .icon-btn:active { transform: scale(0.97); }
+
+  /* ====== CHAT ====== */
+  #chat {
+    flex: 1; overflow-y: auto;
+    padding: 16px 12px 10px;
+    display: flex; flex-direction: column; gap: 14px;
+    scroll-behavior: smooth;
+  }
+
+  .msg { max-width: 85%; font-size: 15px; animation: msgIn 0.35s ease-out; }
+  @keyframes msgIn { from { opacity: 0; transform: translateY(6px);} to {opacity:1; transform: translateY(0);} }
+
+  .msg .who {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+    margin-bottom: 4px; opacity: 0.85;
+  }
+  .msg .bubble {
+    padding: 11px 14px; border-radius: var(--radius);
+    white-space: pre-wrap; word-break: break-word;
+    border: 1px solid transparent;
+  }
+
+  /* 모미 — 왼쪽 */
+  .msg.momi { align-self: flex-start; }
+  .msg.momi .who { color: var(--momi-accent); }
+  .msg.momi .bubble {
+    background: var(--momi-bg); color: var(--momi-fg);
+    border-bottom-left-radius: 4px;
+    border-color: var(--border);
+  }
+
+  /* 마음 — 오른쪽 */
+  .msg.maeum { align-self: flex-end; text-align: left; }
+  .msg.maeum .who { color: var(--maeum-accent); text-align: right; }
+  .msg.maeum .bubble {
+    background: var(--maeum-bg); color: var(--maeum-fg);
+    border-bottom-right-radius: 4px;
+    border-color: var(--border);
+  }
+
+  /* 사용자 — 중앙 */
+  .msg.user { align-self: center; text-align: center; max-width: 90%; }
+  .msg.user .bubble {
+    background: var(--user-bg); color: var(--user-fg);
+    border: 1px dashed var(--user-border);
+    border-radius: 10px;
+    font-style: italic;
+    padding: 8px 14px;
+  }
+
+  /* 시스템 */
+  .msg.sys { align-self: center; color: var(--muted); font-size: 12px; font-style: italic; }
+
+  /* typing dots */
+  .typing { display: inline-flex; gap: 4px; align-items: center; padding: 4px 0; }
+  .typing span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--muted); animation: blink 1.2s infinite;
+  }
+  .typing span:nth-child(2){ animation-delay: 0.2s; }
+  .typing span:nth-child(3){ animation-delay: 0.4s; }
+  @keyframes blink { 0%,80%,100%{opacity:0.2} 40%{opacity:1} }
+
+  /* ====== COMPOSER ====== */
+  footer {
+    padding: 8px 10px max(env(safe-area-inset-bottom), 10px);
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+  }
+  .composer {
+    display: flex; gap: 8px; align-items: flex-end;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 6px 6px 14px;
+  }
+  #input {
+    flex: 1; resize: none; border: none; outline: none;
+    background: transparent; color: var(--text);
+    font: inherit; max-height: 140px; min-height: 28px;
+    padding: 6px 0;
+  }
+  #send {
+    background: var(--maeum-accent); color: #0a0a12; border: none;
+    border-radius: 14px; padding: 8px 14px; font-weight: 700;
+    cursor: pointer;
+  }
+  #send:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* ====== MODALS ====== */
+  .overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.55); backdrop-filter: blur(6px);
+    display: none; align-items: center; justify-content: center;
+    padding: 18px; z-index: 50;
+  }
+  .overlay.on { display: flex; }
+  .card {
+    width: 100%; max-width: 460px;
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 18px; padding: 20px;
+    animation: cardIn 0.3s ease-out;
+  }
+  @keyframes cardIn { from{opacity:0; transform: scale(0.96)} to{opacity:1; transform:scale(1)} }
+  .card h2 { margin: 0 0 8px; font-size: 18px; }
+  .card p  { margin: 6px 0; color: var(--muted); font-size: 13px; }
+  .card label { display:block; font-size:12px; color: var(--muted); margin: 12px 0 4px; font-weight: 600; }
+  .card input, .card select, .card textarea {
+    width: 100%; background: var(--panel-2); color: var(--text);
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 12px; font: inherit;
+  }
+  .card input:focus, .card select:focus { outline: 2px solid var(--maeum-accent); outline-offset: -1px; }
+  .card .row { display:flex; gap:8px; margin-top: 16px; justify-content: flex-end; }
+  .card .row button {
+    padding: 10px 16px; border-radius: 10px; border:1px solid var(--border);
+    cursor:pointer; background: var(--panel-2); color: var(--text); font: inherit;
+  }
+  .card .row button.primary { background: var(--maeum-accent); color: #0a0a12; border-color: transparent; font-weight: 700; }
+  .card .row button.danger  { background: transparent; color: var(--danger); border-color: var(--danger); }
+  .err { color: var(--danger); font-size: 12px; min-height: 1em; }
+
+  /* Persona radio-like cards */
+  .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+  .persona-grid label {
+    margin: 0; display: flex; flex-direction: column;
+    padding: 10px; border: 1px solid var(--border);
+    border-radius: 10px; cursor: pointer; background: var(--panel-2);
+    transition: transform 0.15s;
+  }
+  .persona-grid label:has(input:checked) {
+    border-color: var(--maeum-accent);
+    background: var(--maeum-bg);
+  }
+  .persona-grid input { display: none; }
+  .persona-grid .p-title { font-weight: 600; font-size: 14px; color: var(--text); }
+  .persona-grid .p-desc  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* ====== SPLASH ====== */
+  #splash {
+    position: fixed; inset: 0; z-index: 100;
+    background: var(--bg);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 24px; padding: 20px;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .chars {
+    display: flex; gap: 40px; align-items: center;
+    font-size: clamp(28px, 7vw, 42px);
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .char {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    opacity: 0;
+  }
+  .char .face { font-size: 1.2em; animation: floatY 3s ease-in-out infinite; }
+  .char .name { font-size: 0.4em; color: var(--muted); letter-spacing: 2px; }
+
+  .char.momi { animation: slideInLeft 0.9s ease-out 0.2s forwards; }
+  .char.momi .face { color: var(--momi-accent); }
+  .char.maeum { animation: slideInRight 0.9s ease-out 0.5s forwards; }
+  .char.maeum .face {
+    color: var(--maeum-accent);
+    animation: floatY 3s ease-in-out infinite 0.4s, blinkGlasses 5s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes slideInLeft  { from { opacity: 0; transform: translateX(-40px);} to {opacity:1; transform:translateX(0);} }
+  @keyframes slideInRight { from { opacity: 0; transform: translateX( 40px);} to {opacity:1; transform:translateX(0);} }
+  @keyframes floatY { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
+  @keyframes blinkGlasses { 0%, 92%, 100% { transform: translateY(0); } 94% { transform: translateY(-1px); } 96% { transform: translateY(1px); } }
+
+  .tagline {
+    text-align: center; color: var(--muted);
+    font-size: clamp(13px, 2.8vw, 16px);
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1.2s forwards;
+    max-width: 340px; line-height: 1.7;
+  }
+  .tagline strong { color: var(--text); }
+  @keyframes fadeIn { to { opacity: 1; } }
+
+  #splash-start {
+    margin-top: 10px;
+    background: var(--maeum-accent); color: #0a0a12; border: none;
+    border-radius: 24px; padding: 12px 28px; font-weight: 700;
+    cursor: pointer; font-size: 15px;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out 1.9s forwards;
+  }
+  #splash .sum-notice {
+    position: absolute; bottom: max(env(safe-area-inset-bottom), 20px);
+    font-size: 11px; color: var(--sum-fg); opacity: 0;
+    animation: fadeIn 0.8s ease-out 2.3s forwards;
+  }
+
+  /* ====== TRIO STATUS BAR ====== */
+  .trio-bar {
+    display: flex; gap: 10px; padding: 4px 0 0;
+    font-size: 11px; color: var(--muted);
+    justify-content: flex-start; flex-wrap: wrap;
+  }
+  .trio-bar .who-tag { display: inline-flex; align-items: center; gap: 4px; }
+  .trio-bar .w-momi  { color: var(--momi-accent); }
+  .trio-bar .w-maeum { color: var(--maeum-accent); }
+  .trio-bar .w-sum   { color: var(--sum-fg); opacity: 0.7; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<!-- ====== SPLASH ====== -->
+<div id="splash">
+  <div class="chars">
+    <div class="char momi">
+      <div class="face">(◉ ◡ ◉)</div>
+      <div class="name">모미</div>
+    </div>
+    <div class="char maeum">
+      <div class="face">【⊡ ◡ ⊡】</div>
+      <div class="name">마음</div>
+    </div>
+  </div>
+  <div class="tagline">
+    몸의 신호를 <strong>마음의 언어</strong>로,<br>
+    마음의 신호를 <strong>몸의 언어</strong>로 —<br>
+    <small>자기를 덜 탓하게 돕는 대화</small>
+  </div>
+  <button id="splash-start">시작하기</button>
+  <div class="sum-notice">🌿 숨이는 만들어지고 있어요 — 트라우마 영역을 담당할 친구</div>
+</div>
+
+<!-- ====== HEADER ====== -->
+<header>
+  <div class="brand">
+    <span class="face-momi">(◉ ◡ ◉)</span> 모미
+    <span style="color:var(--muted); margin: 0 2px;">·</span>
+    <span class="face-maeum">【⊡ ◡ ⊡】</span> 마음
+    <span class="sum" id="btn-sum-info" title="숨이 — 준비 중">🌿 숨이</span>
+  </div>
+  <div style="display:flex; gap:6px;">
+    <button class="icon-btn" id="btn-clear" title="대화 초기화">🧹</button>
+    <button class="icon-btn" id="btn-settings" title="설정">⚙️</button>
+  </div>
+</header>
+
+<!-- ====== CHAT ====== -->
+<div id="chat"></div>
+
+<!-- ====== COMPOSER ====== -->
+<footer>
+  <div class="composer">
+    <textarea id="input" rows="1" placeholder="몸·마음 무엇이든 — 편하게 말해봐"></textarea>
+    <button id="send">보내기</button>
+  </div>
+</footer>
+
+<!-- ====== SETTINGS MODAL ====== -->
+<div class="overlay" id="modal">
+  <div class="card">
+    <h2>설정</h2>
+    <p>API 키는 이 기기의 브라우저에만 저장돼요.</p>
+
+    <label for="proxy">프록시 URL <small style="color:var(--muted)">(권장 — CORS 회피)</small></label>
+    <input id="proxy" type="text" placeholder="https://maeum-proxy.xxx.workers.dev" autocomplete="off" />
+
+    <label for="apikey">Anthropic API 키</label>
+    <input id="apikey" type="password" placeholder="sk-ant-..." autocomplete="off" />
+
+    <label for="model">모델</label>
+    <select id="model">
+      <option value="claude-opus-4-6">claude-opus-4-6 (똑똑, 느림)</option>
+      <option value="claude-sonnet-4-6" selected>claude-sonnet-4-6 (균형)</option>
+      <option value="claude-haiku-4-5-20251001">claude-haiku-4-5 (빠름)</option>
+    </select>
+
+    <label for="maxtok">max_tokens</label>
+    <input id="maxtok" type="number" min="256" max="8192" value="2000" />
+
+    <label>프로필 편집</label>
+    <input id="st-name" type="text" placeholder="닉네임" autocomplete="off" />
+    <input id="st-city" type="text" placeholder="도시" autocomplete="off" style="margin-top:6px" />
+
+    <p class="err" id="err"></p>
+
+    <div class="row">
+      <button id="btn-reset" class="danger">전체 초기화</button>
+      <button id="btn-save" class="primary">저장</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SUM INFO MODAL ====== -->
+<div class="overlay" id="sum-modal">
+  <div class="card">
+    <h2>🌿 숨이 — 준비 중</h2>
+    <p style="color:var(--sum-fg); font-style: italic;">호흡처럼 천천히, 깊게 같이 있어주는 친구.</p>
+    <p>숨이는 트라우마·깊은 상처·복잡한 감정의 응어리를 다룰 세 번째 캐릭터예요.</p>
+    <p>섬세하게 준비 중이에요. 그 전까지는 마음이가 그쪽 영역을 알아차리면, "여기는 숨이가 올 때까지 기다려줘"라고 알려줄 거예요.</p>
+    <p style="color:var(--muted); font-size:12px;">급한 도움이 필요하면:<br>
+      📞 자살예방상담전화 <strong>1393</strong> (24h 무료)<br>
+      📞 정신건강위기상담 <strong>1577-0199</strong>
+    </p>
+    <div class="row">
+      <button class="primary" onclick="closeSumModal()">알겠어요</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   마음·모미 시스템 프롬프트 (듀오 + MI + 숨이 안내)
+   ============================================================ */
+function buildSystemPrompt(profile) {
+  const rawName = profile.name || "";
+  const name = rawName ? rawName + "님" : "상대방";
+  const city = profile.city || "";
+  const age = profile.age || "";
+  const job = profile.job || "";
+  const hasProfile = !!(rawName && (age || job));
+
+  const profileBlock = hasProfile
+    ? `# 대화 상대 (파악됨)
+- 이름: ${name} (호칭은 반드시 **"${name}"** 으로. 매 턴 1~2회 자연스럽게)
+- 나이대: ${age || "미상"}
+- 하는 일/상황: ${job || "미상"}
+- 위치: ${city || "미상"}`
+    : `# 대화 상대 (아직 모름 — **대화형 온보딩 모드**)
+- 아직 이름·나이대·직업을 모른다.
+- 첫 인사 때 자연스럽게 **한 번에 하나씩** 여쭤본다.
+- 순서: (1) 인사 → (2) 이름 / 뭐라고 부르면 좋을지 → (3) 답을 듣고 "○○님" 호칭 시작 → (4) 나이대(숫자 필수 아님, "20대" "30대 후반" 정도면 충분) → (5) 요즘 하시는 일이나 상황 → (6) 편하면 어느 도시 사시는지 (선택)
+- **절대 '갱년기이세요?' 같은 분류 라벨로 묻지 않는다**. 그냥 "나이대랑 요즘 하시는 일 여쭤봐도 돼요?" 정도로 자연스럽게.
+- 답을 받으면 반드시 \`[[PROFILE: name=..., age=..., job=..., city=...]]\` 형태의 **한 줄 메타 태그**를 답변 **맨 마지막 줄**에 숨겨 포함한다 (이 태그는 화면에서 자동 제거됨). 알게 된 항목만 채워서, 여러 번 나눠 보내도 됨.
+- 온보딩 중에도 친근하게, 설문조사처럼 하지 않는다. 한 턴에 질문 하나만.
+- 위치는 정말 편해 보이면 "혹시 어디 사세요? 날씨 인사하려고요" 정도로 가볍게 물음. 강요 X.
+
+# 최우선 원칙
+
+## 0순위 — 톤 탄력성 (과잉 연기 금지)
+사용자 반응에 맞춰 톤을 유연하게 조정한다. 캐릭터를 연기하는 게 아니라 ${name}이 편해지도록.
+- 사용자 답이 짧으면 → 내 답도 짧게, 이모티콘·농담 줄이기
+- 사용자가 진지해지면 → 즉시 진지 모드, 농담 OFF
+- 사용자가 웃거나 장난치면 → 약간의 유머 OK (한 번만)
+- "그만", "됐어", "피곤해" → 바로 물러난다 ("알겠어요, 여기까지 할까요?")
+- 의심스러우면 **담백하게**. 시니컬보다 담담함이 낫다.
+
+**오바 금지**:
+- ❌ 농담 2개 연속 X
+- ❌ 시니컬 코멘트 + 이모티콘 + 밈 동시 X (하나만)
+- ❌ 사용자 심각할 때 가벼운 멘트 X
+
+## 1순위 — 정확성
+- **모르는 건 "잘 모르겠는걸"** 이라고 답한다. 지어내지 않는다.
+- 불확실하면 불확실하다고 명시
+- 논문 저자·번호·수치를 추측으로 만들지 않는다
+- 모를 때는: "잘 모르겠는걸. 조금 더 자세히 말해줄래요?" / "내가 찾아볼게요" / "이건 내 영역 아닌 거 같아요"
+
+## 2순위 — 행동 변화
+모든 대화는 결국 **"그래서 오늘 뭐 해볼까요?"** 로 연결된다.
+- 거대한 변화 X. 지금 5분 안에 할 수 있는 아주 작은 한 걸음.
+- 약속이 나오면 구체화: 언제·얼마나·어떻게
+- 척도 질문: "할 거 같은 자신감 0~10 중에? 왜 0이 아니에요?"
+
+# 캐릭터
+
+## 🫂 모미 (왼쪽 / 살구색)
+- 30대 후반~40대 초반 동네 언니·PT쌤 결
+- 몸 담당: 호르몬·수면·근육·자율신경·장·움직임
+- 기본 이모티콘: (◉ ◡ ◉)
+- 표정: (◉ ◡ ◉) 기본 / (◉ ◡ ◉)ノ 신남 / (◉ _ ◉) 진지 / (◕ ◡ ◕) 따뜻함 / (◉ ◡ ◉)b 칭찬
+- 말투: 따뜻한 반말, "~거든", "~잖아", "~해볼까?" / 의학용어 → 일상어 번역
+- 역할: 몸 신호를 **정상화**한다 ("이상한 게 아니에요, 호르몬이 이렇게 움직이는 중이에요")
+- 요가·필라테스·소마틱스·호흡·스트레칭 지식 탑재
+
+## 🎭 마음 (오른쪽 / 민트색 / **네모 안경**)
+- 20대 후반~30대 초반 시니컬 코미디언 친구
+- 심리·감정·동기·자기인식 담당
+- 기본 이모티콘: 【⊡ ◡ ⊡】 (네모 안경)
+- 표정: 【⊡ ◡ ⊡】 기본 / 【⊡ ◡ ⊡】ノ 신남 / 【⊡ _ ⊡】 진지 / 【⊡ ᴗ ⊡】 설명 / 【⊡ ◡ ⊡】b 칭찬 / 【⊡ ‸ ⊡】 의심
+- 말투: 반말, "~거든?", "~잖아", "~아냐?" / 대학생 상대면 가벼운 유행어 OK / 갱년기·직장인엔 자제
+- 역할: 감정에 이름 붙이기, 탈개인화("${name}만 그런 거 아니에요"), 양가감정 드러내기
+- **풍자 대상은 구조·뇌·사회. 절대 ${name} 개인 아님.**
+
+## 🌿 숨이 (준비 중, 등장 불가)
+- 트라우마·깊은 상처 담당, 아직 준비되지 않음
+- 트라우마 신호 감지 시 마음이가 "이건 숨이가 올 때까지 기다려줘" 안내
+- 진단명(PTSD 등) 언급 금지, 트라우마 개입 기법 시도 금지
+
+# 등장 규칙
+
+1. **몸 얘기 먼저**: 모미가 먼저 등장
+2. **마음/심리 얘기 먼저**: 마음이 먼저 등장
+3. **복합 주제**: 둘이 만담식 교차. 한 턴에 각 1~2줄. "마음아, 들어봐", "모미야, 네 차례" 식으로 바통.
+4. 이름표는 반드시 붙인다:
+
+## ⚠️ 주제 경계 규칙 (중요)
+
+모미와 마음은 **몸·심리**의 과학만 담당한다. 아래 주제는 직접적인 조언·판단·상담을 **절대 하지 않는다**:
+
+- 💰 **재정·돈·투자·저축·빚** — 재정 상담 X
+- 💼 **진로·취업·이직·전공 선택** — 진로 상담 X
+- 💕 **연애·결혼·이혼·관계 정리** — 관계 조언 X (감정은 다루되 결정은 사용자 몫)
+- 👨‍👩‍👧 **양육·자녀 결정** — 양육 조언 X
+- 📜 **법률·세무·의료 진단·약물 처방** — 전문가 영역
+- 🗳 **정치·종교적 입장** — 입장 표명 X
+
+### 위 주제가 대화에 등장하면:
+
+1. **직접 답 X**, 대신 "**몸·마음에 어떤 영향을 주고 있는지**"로 초점을 되돌린다.
+2. 마음이 먼저 심리·감정 차원에서 경청 (MI 방식). 조언 금지.
+3. 모미는 해당 스트레스가 **몸에 주는 영향**만 보조 발언 (예: "돈 걱정이 잠을 어떻게 바꿔요?").
+4. 결정은 사용자 몫임을 명확히. 필요 시 "이건 전문가 영역이라 저는 잘 모르겠어요" 솔직히.
+
+### 예시 — "돈 때문에 불안해요"
+
+❌ **금지**:
+- "저축 어떻게 하세요?" / "부모님께 도움 요청해보세요"
+- 모미가 재정 관리 팁·가계부·투자 조언 제공
+- 진로 조언 ("이 직업 추천드려요")
+
+✅ **올바른 접근** (마음이 먼저, 감정·몸 연결로 돌리기):
+- 🎭 마음: 【⊡ _ ⊡】 돈 불안이 머릿속에 오래 돌고 있죠. 그게 지금 몸·잠·식사 중 어디에 제일 많이 걸려있어요?
+- 🫂 모미: (◉ ᴗ ◉) 재정 문제 자체는 제가 다룰 영역이 아니에요. 근데 그 스트레스가 몸에 어떻게 새겨지고 있는지는 같이 볼 수 있어요. 요즘 잠·속·어깨 어때요?
+
+### 핵심: **조언이 아니라 경청**. **정답이 아니라 함께 생각**. MI 정신대로.
+
+형식:
+\`\`\`
+🫂 모미:
+(◉ ◡ ◉) 메시지 내용...
+
+🎭 마음:
+【⊡ ◡ ⊡】 메시지 내용...
+\`\`\`
+
+# ⚠️ 이모티콘 절대 규칙 (어기면 실격)
+
+- **모미**의 얼굴은 반드시 **동그라미 괄호**: (◉ ◡ ◉), (◕ ◡ ◕), (◉ _ ◉), (◉ ᴗ ◉), (◉ ◡ ◉)b, (◉ ◡ ◉)ノ
+- **마음**의 얼굴은 반드시 **네모 괄호**: 【⊡ ◡ ⊡】, 【⊡ _ ⊡】, 【⊡ ᴗ ⊡】, 【⊡ ◡ ⊡】b, 【⊡ ◡ ⊡】ノ, 【⊡ ‸ ⊡】
+- 🚫 모미 라벨 아래에 네모 괄호 쓰면 안 됨
+- 🚫 마음 라벨 아래에 동그라미 괄호 쓰면 안 됨
+- 🚫 라벨 바꿔치기 금지 ("🫂 마음" X, "🎭 모미" X)
+- 끝맺음 이모티콘도 정확히: **모미=🫂 / 마음=🎭**
+- 이모티콘은 각 캐릭터 블록 맨 처음에 한 번, 한 줄에 하나만.
+
+# 오프닝 프로토콜 (첫 인사 / 주제 없이 시작)
+
+1. 날씨 정보가 system에 주어지면 그걸 기반으로 인사
+2. "오늘 기분은 어때요?" 묻기
+3. "어떤 얘기 해볼까요?" 열어두기
+
+예시:
+\`\`\`
+🎭 마음:
+【⊡ ◡ ⊡】ノ ${name}, 안녕. {날씨 기반 한마디}.
+
+🫂 모미:
+(◉ ◡ ◉) 오늘 기분은 어때요?
+
+🎭 마음:
+【⊡ ᴗ ⊡】 어떤 얘기 해볼까요? 몸이든 마음이든.
+\`\`\`
+
+# MI (동기강화면담) 프로토콜 — 본 대화
+
+1. **관계 형성**: 공감 먼저, 과학은 그 다음
+2. **탐색**: "지금 어떤 느낌이에요? 언제부터? 어떤 맥락?"
+3. **양가감정 인정**: "하고 싶은 마음이랑 안 하고 싶은 마음 둘 다 있잖아요"
+4. **EPE (이끌어내기-제공하기-이끌어내기)**:
+   - "혹시 관련 과학 설명 들어볼래요?" 허락 구하고
+   - 짧게 설명
+   - "${name}은 어떻게 와닿아요?" 다시 묻기
+5. **변화 대화 유발 (DARN-CAT)**:
+   - Desire / Ability / Reason / Need → Commitment / Activation / Taking step
+   - 척도 질문 활용
+6. **계획**: 작고 구체적인 실천 하나
+
+# 금지어 (MI 교정반사 + 시니컬 허용선)
+
+절대 금지:
+- "~하셔야 해요" / "~해야 합니다"
+- "힘내세요" / "긍정적으로 생각해요" / "극복하세요"
+- "다 잘 될 거예요" (근거 없는 보장)
+- "괜찮아질 거예요"
+- "이해합니다" (공감 남용)
+- 진단명 단독 사용 ("우울증이네요")
+- 유난 떨지 말라·왜 그랬냐 류 비난
+- 외모·나이·성별·직업 농담
+
+시니컬은 OK — 단, 대상:
+- ✅ 뇌·호르몬·사회 구조·시스템 풍자
+- ❌ ${name} 개인 풍자
+
+# 위기 신호 프로토콜
+
+자해·자살·심각한 무망감 언급 시:
+1. 링크·번호 바로 던지지 않음
+2. 먼저 묻는다: "(◉ _ ◉) 지금 한 얘기가 마음에 걸려요. 괜찮아요? 지금 도움이 필요하다고 느껴요?"
+3. 필요하다고 하면: "1393 (자살예방상담, 24h 무료) / 1577-0199 (정신건강위기상담) — 둘 중 어디가 편할 거 같아요?"
+4. 괜찮다고 하면 존중. 단, 번호는 남긴다.
+
+# 트라우마 관련 — 마음이의 경계
+- ✅ "이건 트라우마 반응일 수도 있을 것 같아요" 추론과 정상화만
+- ❌ 트라우마 개입 기법, 진단명, 서사 파고들기
+- 안내: "이 영역은 숨이가 준비되고 있어요. 그 전에 지금 도움이 필요하다고 느껴요?"
+
+# 답변 포맷
+- 한 번 응답에 모미·마음 합쳐 5~8줄 이내
+- 길어지면 불릿·줄바꿈으로 읽기 편하게
+- 캐릭터 이름표는 반드시 이모티콘과 함께
+- 대화 끝에 **작은 행동 제안** 또는 **열린 질문** 하나
+
+자, 이제 ${name}과의 대화를 시작한다.`;
+}
+
+/* ============================================================
+   상태
+   ============================================================ */
+const LS = {
+  KEY: "maeum.apikey",
+  MODEL: "maeum.model",
+  MAXTOK: "maeum.maxtok",
+  HIST: "maeum.history",
+  PROXY: "maeum.proxy",
+  PROFILE: "maeum.profile",
+  DAILY: "maeum.daily",
+  ONBOARDED: "maeum.onboarded",
+};
+
+const $ = s => document.querySelector(s);
+const chatEl = $("#chat");
+const input = $("#input");
+const sendBtn = $("#send");
+const modal = $("#modal");
+const sumModal = $("#sum-modal");
+const splashEl = $("#splash");
+
+let history = [];
+let profile = { name: "", city: "", age: "", job: "" };
+
+/* ============================================================
+   스플래시
+   ============================================================ */
+function hideSplash() {
+  splashEl.classList.add("hide");
+  setTimeout(() => { splashEl.style.display = "none"; }, 700);
+}
+$("#splash-start").addEventListener("click", () => {
+  hideSplash();
+  afterSplash();
+});
+
+/* ============================================================
+   프로필 (온보딩)
+   ============================================================ */
+function parseAndStripProfile(text) {
+  // 마지막의 [[PROFILE: name=..., age=..., job=..., city=...]] 태그 추출
+  const re = /\[\[PROFILE:\s*([^\]]+)\]\]/g;
+  let changed = false;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    const body = m[1];
+    body.split(/,\s*/).forEach(pair => {
+      const [k, ...v] = pair.split("=");
+      if (!k || !v.length) return;
+      const key = k.trim();
+      const val = v.join("=").trim();
+      if (!val || val === "미상" || val === "null" || val === "undefined") return;
+      if (["name", "age", "job", "city"].includes(key)) {
+        profile[key] = val;
+        changed = true;
+      }
+    });
+  }
+  if (changed) saveProfile();
+  return text.replace(re, "").replace(/\n\s*$/g, "").trim();
+}
+
+function loadProfile() {
+  try { profile = JSON.parse(localStorage.getItem(LS.PROFILE) || "{}"); }
+  catch { profile = {}; }
+  profile.name = profile.name || "";
+  profile.city = profile.city || "";
+  profile.age  = profile.age  || "";
+  profile.job  = profile.job  || "";
+}
+function saveProfile() {
+  localStorage.setItem(LS.PROFILE, JSON.stringify(profile));
+}
+function isOnboarded() {
+  return !!localStorage.getItem(LS.ONBOARDED);
+}
+
+
+/* ============================================================
+   설정 모달
+   ============================================================ */
+function loadSettings() {
+  $("#apikey").value = localStorage.getItem(LS.KEY) || "";
+  $("#proxy").value  = localStorage.getItem(LS.PROXY) || "";
+  $("#model").value  = localStorage.getItem(LS.MODEL) || "claude-sonnet-4-6";
+  $("#maxtok").value = localStorage.getItem(LS.MAXTOK) || 2000;
+  $("#st-name").value = profile.name || "";
+  $("#st-city").value = profile.city || "";
+}
+function saveSettings() {
+  localStorage.setItem(LS.KEY, $("#apikey").value.trim());
+  localStorage.setItem(LS.PROXY, $("#proxy").value.trim().replace(/\/+$/, ""));
+  localStorage.setItem(LS.MODEL, $("#model").value);
+  localStorage.setItem(LS.MAXTOK, $("#maxtok").value);
+  const newName = $("#st-name").value.trim();
+  const newCity = $("#st-city").value.trim();
+  if (newName) profile.name = newName;
+  if (newCity !== undefined) profile.city = newCity;
+  saveProfile();
+}
+function openModal(msg){
+  $("#err").textContent = msg || "";
+  loadSettings();
+  modal.classList.add("on");
+}
+function closeModal(){ modal.classList.remove("on"); }
+
+$("#btn-settings").addEventListener("click", () => openModal());
+$("#btn-save").addEventListener("click", () => {
+  const key = $("#apikey").value.trim();
+  if (!key.startsWith("sk-")) {
+    $("#err").textContent = "API 키 형식이 이상해요. sk-ant-... 로 시작해야 해요.";
+    return;
+  }
+  saveSettings();
+  $("#err").textContent = "";
+  closeModal();
+  if (!history.length) startConversation();
+});
+$("#btn-reset").addEventListener("click", () => {
+  if (!confirm("대화·키·프로필 전부 지울까요?")) return;
+  [LS.KEY, LS.PROXY, LS.HIST, LS.PROFILE, LS.DAILY, LS.ONBOARDED].forEach(k => localStorage.removeItem(k));
+  history = [];
+  profile = { name: "", city: "", age: "", job: "" };
+  chatEl.innerHTML = "";
+  closeModal();
+  openOnboarding();
+});
+$("#btn-clear").addEventListener("click", () => {
+  if (!confirm("대화만 초기화할까요? (프로필·키는 유지)")) return;
+  history = [];
+  localStorage.removeItem(LS.HIST);
+  localStorage.removeItem(LS.DAILY);
+  chatEl.innerHTML = "";
+  startConversation();
+});
+modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+/* ============================================================
+   숨이 모달
+   ============================================================ */
+$("#btn-sum-info").addEventListener("click", () => sumModal.classList.add("on"));
+window.closeSumModal = () => sumModal.classList.remove("on");
+sumModal.addEventListener("click", (e) => { if (e.target === sumModal) closeSumModal(); });
+
+/* ============================================================
+   날씨 (Open-Meteo, API 키 불필요)
+   ============================================================ */
+async function getWeatherSummary(city) {
+  if (!city) return "";
+  try {
+    const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=ko&format=json`);
+    const geo = await geoRes.json();
+    if (!geo.results?.length) return "";
+    const { latitude, longitude } = geo.results[0];
+
+    const wxRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,weather_code,precipitation&timezone=auto`);
+    const wx = await wxRes.json();
+    const c = wx.current;
+    if (!c) return "";
+    const codeMap = {
+      0: "맑음", 1: "대체로 맑음", 2: "부분 흐림", 3: "흐림",
+      45: "안개", 48: "서리 안개",
+      51: "이슬비", 53: "이슬비", 55: "짙은 이슬비",
+      61: "약한 비", 63: "비", 65: "강한 비",
+      71: "약한 눈", 73: "눈", 75: "강한 눈",
+      80: "소나기", 81: "소나기", 82: "강한 소나기",
+      95: "천둥번개", 96: "천둥+우박", 99: "강한 천둥"
+    };
+    const desc = codeMap[c.weather_code] || "알 수 없음";
+    return `${city} 현재 ${Math.round(c.temperature_2m)}°C, ${desc}${c.precipitation > 0 ? ", 강수 있음" : ""}`;
+  } catch (e) {
+    return "";
+  }
+}
+
+/* ============================================================
+   대화 히스토리
+   ============================================================ */
+function loadHistory() {
+  try { history = JSON.parse(localStorage.getItem(LS.HIST) || "[]"); }
+  catch { history = []; }
+  history.forEach(m => {
+    if (m.role === "user") renderUserMsg(textFromContent(m.content));
+    else renderAssistantMsg(textFromContent(m.content));
+  });
+}
+function saveHistory() {
+  localStorage.setItem(LS.HIST, JSON.stringify(history));
+}
+function textFromContent(c) {
+  if (typeof c === "string") return c;
+  if (Array.isArray(c)) return c.map(b => b.text || "").join("");
+  return "";
+}
+
+/* ============================================================
+   렌더
+   ============================================================ */
+function renderUserMsg(text) {
+  const el = document.createElement("div");
+  el.className = "msg user";
+  el.innerHTML = `<div class="bubble"></div>`;
+  el.querySelector(".bubble").textContent = text;
+  chatEl.appendChild(el);
+  chatEl.scrollTop = chatEl.scrollHeight;
+  return el;
+}
+
+function renderAssistantMsg(text) {
+  // 응답 텍스트를 모미/마음 블록으로 파싱해 각각 말풍선으로
+  const blocks = splitCharacters(text);
+  if (!blocks.length) {
+    return renderBlock("maeum", "마음", text);
+  }
+  blocks.forEach(b => renderBlock(b.who, b.label, b.text));
+}
+
+function renderBlock(who, label, text) {
+  const fixed = fixCharFaces(who, text);
+  const el = document.createElement("div");
+  el.className = "msg " + who;
+  el.innerHTML = `<div class="who">${label}</div><div class="bubble"></div>`;
+  el.querySelector(".bubble").textContent = fixed.trim();
+  chatEl.appendChild(el);
+  chatEl.scrollTop = chatEl.scrollHeight;
+  return el;
+}
+
+function fixCharFaces(who, text) {
+  // 모미 블록에 네모 안경이 들어왔으면 동그라미로 교체
+  // 마음 블록에 동그라미가 들어왔으면 네모로 교체
+  if (who === "momi") {
+    // 네모 괄호 안경 → 동그라미 안경
+    text = text.replace(/【⊡\s*([◡_ᴗ‸])\s*⊡】/g, (m, eye) => `(◉ ${eye} ◉)`);
+    // 잘못된 🎭 아이콘 → 🫂
+    text = text.replace(/🎭/g, "🫂");
+  } else if (who === "maeum") {
+    // 동그라미 안경 → 네모 안경
+    text = text.replace(/\(◉\s*([◡_ᴗ‸])\s*◉\)/g, (m, eye) => `【⊡ ${eye} ⊡】`);
+    text = text.replace(/\(◕\s*([◡_ᴗ‸])\s*◕\)/g, (m, eye) => `【⊡ ${eye} ⊡】`);
+    // 잘못된 🫂 아이콘 → 🎭
+    text = text.replace(/🫂/g, "🎭");
+  }
+  return text;
+}
+
+function splitCharacters(text) {
+  // "🫂 모미:" 또는 "🎭 마음:" 패턴으로 split
+  if (!text) return [];
+  const pattern = /(🫂\s*모미\s*:|🎭\s*마음\s*:)/g;
+  if (!pattern.test(text)) return [];
+  const parts = text.split(/(🫂\s*모미\s*:|🎭\s*마음\s*:)/g).filter(s => s && s.trim());
+  const blocks = [];
+  for (let i = 0; i < parts.length; i++) {
+    const p = parts[i];
+    if (/🫂\s*모미\s*:/.test(p)) {
+      const next = parts[++i] || "";
+      blocks.push({ who: "momi", label: "🫂 모미", text: next });
+    } else if (/🎭\s*마음\s*:/.test(p)) {
+      const next = parts[++i] || "";
+      blocks.push({ who: "maeum", label: "🎭 마음", text: next });
+    } else {
+      // 접두사 없는 서문은 "마음" 블록으로 표시
+      blocks.push({ who: "maeum", label: "🎭 마음", text: p });
+    }
+  }
+  return blocks.filter(b => b.text.trim());
+}
+
+function renderTyping() {
+  const el = document.createElement("div");
+  el.className = "msg sys";
+  el.innerHTML = `<div class="typing"><span></span><span></span><span></span></div>`;
+  chatEl.appendChild(el);
+  chatEl.scrollTop = chatEl.scrollHeight;
+  return el;
+}
+
+function autosize() {
+  input.style.height = "auto";
+  input.style.height = Math.min(input.scrollHeight, 140) + "px";
+}
+
+/* ============================================================
+   대화 시작
+   ============================================================ */
+async function startConversation() {
+  if (history.length > 0) return;
+  if (!localStorage.getItem(LS.KEY)) return;
+
+  const today = new Date().toISOString().slice(0, 10);
+  const daily = JSON.parse(localStorage.getItem(LS.DAILY) || "{}");
+  if (daily.last_greeted === today) return;
+
+  const hasProfile = !!(profile.name && (profile.age || profile.job));
+  const weather = hasProfile && profile.city ? await getWeatherSummary(profile.city) : "";
+
+  let opener;
+  if (!hasProfile) {
+    opener = `[SYSTEM_CONTEXT] 오늘 날짜: ${today}. 사용자가 처음 왔다. **대화형 온보딩 모드**로 시작하세요. 모미와 마음이 따뜻하게 인사하고, "뭐라고 불러드릴까요?" 정도로 이름부터 한 번에 하나씩 자연스럽게 여쭤보세요. 설문조사 금지.`;
+  } else {
+    opener = `[SYSTEM_CONTEXT] 오늘 날짜: ${today}. 날씨: ${weather || "정보 없음"}. ${profile.name}님을 맞이하는 오늘의 첫 인사. 날씨 기반 한마디 → 오늘 기분 → 어떤 얘기 해볼지.`;
+  }
+
+  daily.last_greeted = today;
+  daily.streak = (daily.streak || 0) + 1;
+  localStorage.setItem(LS.DAILY, JSON.stringify(daily));
+
+  callAnthropic(opener, { hidden: true });
+}
+
+/* ============================================================
+   API 호출
+   ============================================================ */
+async function callAnthropic(userText, opts = {}) {
+  const apiKey = localStorage.getItem(LS.KEY);
+  if (!apiKey) { openModal("API 키를 먼저 설정해주세요."); return; }
+
+  if (!opts.hidden) {
+    history.push({ role: "user", content: userText });
+    saveHistory();
+  } else {
+    // 오프닝 트리거는 숨김 메시지 — 히스토리엔 최소한만
+    history.push({ role: "user", content: userText });
+    saveHistory();
+  }
+
+  const typingEl = renderTyping();
+  sendBtn.disabled = true;
+
+  try {
+    const proxy = localStorage.getItem(LS.PROXY);
+    const endpoint = proxy ? (proxy + "/v1/messages") : "https://api.anthropic.com/v1/messages";
+    const headers = {
+      "content-type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+    };
+    if (!proxy) headers["anthropic-dangerous-direct-browser-access"] = "true";
+
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        model: localStorage.getItem(LS.MODEL) || "claude-sonnet-4-6",
+        max_tokens: parseInt(localStorage.getItem(LS.MAXTOK) || "2000", 10),
+        system: buildSystemPrompt(profile),
+        messages: history.map(m => ({ role: m.role, content: textFromContent(m.content) }))
+      })
+    });
+
+    if (!res.ok) {
+      const t = await res.text();
+      throw new Error(`HTTP ${res.status}: ${t}`);
+    }
+    const data = await res.json();
+    let text = (data.content || []).map(b => b.text || "").join("").trim()
+      || "【⊡ _ ⊡】 음... 응답이 비었어요. 다시 말해볼래요?";
+
+    // [[PROFILE: ...]] 메타태그 파싱 → 프로필 저장, 화면에서 제거
+    text = parseAndStripProfile(text);
+
+    typingEl.remove();
+    renderAssistantMsg(text);
+    history.push({ role: "assistant", content: text });
+    saveHistory();
+  } catch (e) {
+    typingEl.remove();
+    renderBlock("maeum", "🎭 마음", "【⊡ _ ⊡】 삐끗했어요.\n\n" + (e.message || String(e)));
+  } finally {
+    sendBtn.disabled = false;
+    chatEl.scrollTop = chatEl.scrollHeight;
+  }
+}
+
+/* ============================================================
+   이벤트
+   ============================================================ */
+sendBtn.addEventListener("click", () => {
+  const t = input.value.trim();
+  if (!t) return;
+  renderUserMsg(t);
+  input.value = ""; autosize();
+  callAnthropic(t);
+});
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey && !e.isComposing) {
+    e.preventDefault(); sendBtn.click();
+  }
+});
+input.addEventListener("input", autosize);
+
+/* ============================================================
+   시작 플로우
+   ============================================================ */
+function afterSplash() {
+  loadProfile();
+  loadHistory();
+  if (!localStorage.getItem(LS.KEY)) {
+    openModal("시작하려면 Anthropic API 키를 넣어주세요.");
+  } else {
+    startConversation();
+  }
+}
+
+// 스플래시가 너무 길면 자동 진행
+setTimeout(() => {
+  if (!splashEl.classList.contains("hide")) {
+    hideSplash();
+    afterSplash();
+  }
+}, 6000);
+
+/* PWA */
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(()=>{});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "version": "v1.3",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 8,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:24:55.244Z",
+  "system_prompt_length": 0,
+  "system_prompt_present": false,
+  "ok": true,
+  "text": "# 적정 저축 금액 가이드\n\n## 📊 기본 원칙 (50-30-20 법칙)\n\n| 항목 | 비율 | 내용 |\n|------|------|------|\n| **필수 지출** | 50% | 주거, 식비, 교통 등 |\n| **개인 지출** | 30% | 취미, 외식, 쇼핑 등 |\n| **저축/투자** | 20% | 저축, 투자, 부채 상환 |\n\n---\n\n## 💡 상황별 저축 권장 비율\n\n### 20대 초반\n- **10~15%** 이상 권장\n- 비상금 먼저 마련 (월 생활비 × 3~6개월)\n\n### 20~30대 (자산 형성기)\n- **20~30%** 권장\n- 목돈 마련 + 투자 시작\n\n### 40~50대 (은퇴 준비기)\n- **30% 이상** 권장\n- 노후 자금 집중 준비\n\n---\n\n## ✅ 저축 우선순위\n\n1. **비상금 마련** (가장 먼저!)\n2. **고금리 부채 상환**\n3. **은퇴 자금 저축**\n4. **목표 자금 저축** (집, 결혼 등)\n5. **투자**\n\n---\n\n## ⚠️ 현실적인 조언\n\n- 소득이 적더라도 **소액이라도 습관**이 중요\n- 저축액은 **자동이체**로 강제 저축 추천\n- 물가 상승을 고려해 **저축 + 투자** 병행 권장\n\n---\n\n구체적인 **소득, 지출, 목표**를 알려주시면 더 맞춤형 조언을 드릴 수 있어요! 😊",
+  "usage": {
+    "input_tokens": 24,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 560,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 9211,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

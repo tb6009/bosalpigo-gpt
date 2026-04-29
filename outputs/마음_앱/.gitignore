@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local
+*.log
+.env
+.env.local
+
+# Secrets — 절대 커밋 금지
+**/secrets.*
+**/apikey*
+**/*.key

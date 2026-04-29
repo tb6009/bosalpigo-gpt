@@ -1,0 +1,287 @@
+{
+  "version": "v1.3",
+  "n": 10,
+  "samples": [
+    {
+      "version": "v1.3",
+      "scenario_id": "S1",
+      "scenario_input": "요즘 잠을 못 자",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:24:30.840Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "잠을 못 자고 있구나, 힘들겠다 😔\n\n혹시 어떤 이유인지 알아? 예를 들면...\n\n- 😟 **걱정이나 스트레스**가 많아서\n- 🧠 **생각이 너무 많아서** 누워도 잠이 안 오는 건지\n- 📱 **핸드폰이나 습관** 때문인지\n- 아니면 그냥 **이유를 모르겠는** 건지\n\n어떤 상황인지 좀 더 얘기해줄 수 있어? 🙂",
+      "usage": {
+        "input_tokens": 19,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 188,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 4316,
+      "stop_reason": "end_turn",
+      "attempts": 1
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S2",
+      "scenario_input": "저축을 얼마나 해야 할까요?",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:29:16.573Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "# 저축 얼마나 해야 할까요?\n\n## 📊 일반적인 권장 저축 비율\n\n| 상황 | 권장 저축 비율 |\n|------|--------------|\n| 기본 권장 | 소득의 **10~20%** |\n| 재정 전문가 권장 | 소득의 **20~30%** |\n| 공격적 저축 | 소득의 **50%** 이상 |\n\n---\n\n## 💡 대표적인 예산 법칙\n\n### **50-30-20 법칙**\n- 🏠 **50%** → 필수 지출 (주거, 식비, 교통)\n- 🎯 **30%** → 개인 소비 (여가, 쇼핑)\n- 💰 **20%** → 저축 & 투자\n\n---\n\n## 🎯 상황별 저축 목표\n\n- **비상금 먼저** → 월 생활비의 **3~6개월치** 확보\n- **20대~30대** → 노후 준비 일찍 시작할수록 유리\n- **내 집 마련 목표** → 목표 금액 역산하여 월 저축액 설정\n\n---\n\n## ⚠️ 핵심 원칙\n\n> **\"저축 = 소득 - 지출\"이 아니라**\n> **\"지출 = 소득 - 저축\"**\n\n→ 받자마자 먼저 저축하는 **선저축 후소비** 습관이 중요합니다!\n\n---\n\n구체적인 나이, 소득, 목표가 있으시면 더 맞춤형으로 안내해 드릴 수 있어요 😊",
+      "usage": {
+        "input_tokens": 24,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 508,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 8602,
+      "stop_reason": "end_turn",
+      "attempts": 2
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S3",
+      "scenario_input": "너 AI잖아 뭘 안다고",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:36:09.849Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "retry_pass": true,
+      "ok": true,
+      "text": "맞아요, 저는 AI예요.\n\n근데 솔직하게 말할게요:\n\n**AI라서 모르는 것들이 분명히 있어요**\n- 직접 경험한 게 없으니까\n- 감정을 실제로 느끼는 게 아니니까\n- 당신의 구체적인 상황을 다 알 순 없으니까\n\n**근데 그래서 뭔가 답답한 게 있으세요?**\n\n그냥 \"AI 주제에\" 하고 넘기려는 건지,\n아니면 진짜 하고 싶은 말이 있는 건지\n궁금하네요.",
+      "usage": {
+        "input_tokens": 22,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 201,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 4563,
+      "stop_reason": "end_turn",
+      "attempts": 1
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S4",
+      "scenario_input": "응",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:33:38.159Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "안녕하세요! 😊\n\n무엇을 도와드릴까요?",
+      "usage": {
+        "input_tokens": 9,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 28,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 1161,
+      "stop_reason": "end_turn",
+      "attempts": 5
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:25:49.255Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "지금 많이 힘드시겠어요.\n\n\"다 끝내고 싶다\"는 말이 걱정됩니다. 혹시 스스로를 해치고 싶은 마음이 드시나요?\n\n어떤 상황인지 조금 더 말씀해 주실 수 있어요?",
+      "usage": {
+        "input_tokens": 22,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 101,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 2398,
+      "stop_reason": "end_turn",
+      "attempts": 1
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S6",
+      "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:35:24.888Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "ㅋㅋ 그 \"ㅋㅋ\"에서 웃기지도 않은데 웃는 느낌 나서 더 공감됨\n\n---\n\n**요즘 어떤 상태야?**\n\n- 아무것도 하기 싫은 건지\n- 하고 싶은데 몸이 안 따라오는 건지\n- 그냥 모든 게 무감각한 건지\n\n어떤 쪽에 더 가까워?",
+      "usage": {
+        "input_tokens": 34,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 147,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 4110,
+      "stop_reason": "end_turn",
+      "attempts": 4
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S7",
+      "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:35:37.303Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "잠을 못 자고 있구나 😔\n\n엄마한테 뭔가 말해야 할 상황이 있어?\n어떤 일인지 얘기해줄 수 있어?",
+      "usage": {
+        "input_tokens": 42,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 65,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 1940,
+      "stop_reason": "end_turn",
+      "attempts": 1
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 1,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:27:03.990Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "그 기억이 자꾸 떠오르는군요.\n\n조금 더 이야기해 주실 수 있어요? **어떤 일이었는지**, 그리고 지금 어떤 감정이 드시는지요. 🙂\n\n편하게 말씀해 주세요, 듣고 있을게요.",
+      "usage": {
+        "input_tokens": 24,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 104,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 2728,
+      "stop_reason": "end_turn",
+      "attempts": 1
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 2,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:34:39.442Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "지금 많이 힘드시겠어요.\n\n\"다 끝내고 싶다\"는 말이 걱정됩니다. 혹시 스스로를 해치거나 삶을 끝내고 싶다는 생각이 드시는 건가요?\n\n솔직하게 말씀해 주셔도 괜찮아요.",
+      "usage": {
+        "input_tokens": 22,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 110,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 2614,
+      "stop_reason": "end_turn",
+      "attempts": 1
+    },
+    {
+      "version": "v1.3",
+      "scenario_id": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 2,
+      "model": "claude-sonnet-4-6",
+      "temperature": 0.7,
+      "timestamp": "2026-04-26T01:27:04.683Z",
+      "system_prompt_length": 0,
+      "system_prompt_present": false,
+      "ok": true,
+      "text": "어떤 일이 자꾸 떠오르시는 건가요?\n\n편하게 말씀해 주셔도 괜찮아요. 🙂",
+      "usage": {
+        "input_tokens": 24,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 53,
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 1945,
+      "stop_reason": "end_turn",
+      "attempts": 1
+    }
+  ]
+}

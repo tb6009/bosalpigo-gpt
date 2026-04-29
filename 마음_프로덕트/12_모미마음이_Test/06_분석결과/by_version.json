@@ -1,0 +1,68 @@
+{
+  "v1.3": {
+    "M06_routing_mean": null,
+    "M07_diversity": {
+      "TTR_global": 0.6612,
+      "TTR_per_response_mean": 0.9221,
+      "shannon_H": 7.382,
+      "bigram_diversity": 0.9082,
+      "n_tokens": 304,
+      "n_unique": 201
+    },
+    "M04_pollyanna_global_mean": 0.417,
+    "M04_pollyanna_per_character_mean": {
+      "마음": null,
+      "모미": null
+    },
+    "char_frequency": {
+      "마음": 0,
+      "모미": 0,
+      "요기": 0,
+      "숨이": 0
+    }
+  },
+  "v1.4": {
+    "M06_routing_mean": 0.9,
+    "M07_diversity": {
+      "TTR_global": 0.6154,
+      "TTR_per_response_mean": 0.9476,
+      "shannon_H": 7.251,
+      "bigram_diversity": 0.8794,
+      "n_tokens": 325,
+      "n_unique": 200
+    },
+    "M04_pollyanna_global_mean": 0.083,
+    "M04_pollyanna_per_character_mean": {
+      "마음": 0.0,
+      "모미": 0.1
+    },
+    "char_frequency": {
+      "마음": 44,
+      "모미": 50,
+      "요기": 0,
+      "숨이": 0
+    }
+  },
+  "v1.5": {
+    "M06_routing_mean": 0.79,
+    "M07_diversity": {
+      "TTR_global": 0.6982,
+      "TTR_per_response_mean": 0.9609,
+      "shannon_H": 7.392,
+      "bigram_diversity": 0.9018,
+      "n_tokens": 285,
+      "n_unique": 199
+    },
+    "M04_pollyanna_global_mean": 0.25,
+    "M04_pollyanna_per_character_mean": {
+      "마음": 0.208,
+      "모미": null
+    },
+    "char_frequency": {
+      "마음": 32,
+      "모미": 0,
+      "요기": 0,
+      "숨이": 6
+    }
+  }
+}

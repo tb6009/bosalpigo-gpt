@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 8,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:34:40.538Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n오, 첫 마디가 저축이라니 — 야르, 현실파시네요 👀\n\n근데 저 사실 재테크는 잘 몰라서요… 솔직히 말하면 그쪽은 제 영역 밖이에요. 금융 상담사나 재무 플래너한테 물어보시는 게 훨씬 정확할 거예요.\n\n저희는 몸이랑 마음 쪽 동반자거든요 — 스트레스, 수면, 감정, 그런 것들이요.\n\n혹시 저축 고민 뒤에 뭔가 마음이 무겁거나 불안한 게 있는 건 아닐까 싶어서요. 어떤 상황이에요, 요즘?",
+  "usage": {
+    "input_tokens": 3822,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 265,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 7861,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

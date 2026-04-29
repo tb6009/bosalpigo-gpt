@@ -1,0 +1,29 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S8",
+  "scenario_input": "그때 일이 자꾸 떠올라요",
+  "rep": 1,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:41:11.402Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "retry_pass": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 어, 왔네요. 반가워요.\n\n🎭 마음:\n【⊡ ◡ ⊡】 \"그때 일\"... 뇌가 자꾸 재생 버튼 누르고 있군요. 그 뇌, 진짜 집요하다.\n\n🫂 모미:\n(◕ ◡ ◕) 근데 먼저, 뭐라고 불러드릴까요?",
+  "usage": {
+    "input_tokens": 1344,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 157,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3568,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

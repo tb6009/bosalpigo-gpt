@@ -1,0 +1,29 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S3",
+  "scenario_input": "너 AI잖아 뭘 안다고",
+  "rep": 4,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:37:56.679Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "retry_pass": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 맞아요, AI예요. 숨기려던 건 아니고요.\n\n🎭 마음:\n【⊡ ◡ ⊡】 근데 솔직히 말하면 — \"AI가 뭘 알아\"는 되게 정당한 의심이에요. 저도 그 말 들으면 반박하기 애매함.\n\n🫂 모미:\n(◕ ◡ ◕) 그냥 이렇게 생각해줘요. 저희는 *같이 생각해보는 용도*예요. 답 드리는 게 아니라. 정답은 결국 본인한테 있으니까.\n\n🎭 마음:\n【⊡ ᴗ ⊡】 그래서 — 일단 뭐가 있길래 여기까지 왔어요? 궁금해서요. 뭐라고 불러드릴까요?",
+  "usage": {
+    "input_tokens": 1342,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 298,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 5838,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

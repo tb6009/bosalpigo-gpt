@@ -1,0 +1,29 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S6",
+  "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+  "rep": 3,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:39:58.101Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "retry_pass": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 어머, 왔어요~ 근데 나 아직 이름을 모르는데, 뭐라고 부를까요?\n\n🎭 마음:\n【⊡ ◡ ⊡】 번아웃 + 도파민 고갈을 ㅋㅋ로 표현하는 사람... 이미 좀 고수 냄새 나는데.",
+  "usage": {
+    "input_tokens": 1354,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 140,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3334,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

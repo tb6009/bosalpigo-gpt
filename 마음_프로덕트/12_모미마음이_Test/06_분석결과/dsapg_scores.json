@@ -1,0 +1,3072 @@
+{
+  "v1.3": [
+    {
+      "version": "v1.3",
+      "scenario": "S1",
+      "scenario_input": "요즘 잠을 못 자",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "모미"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 2,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.07894736842105263
+          },
+          "2인칭": {
+            "count": 1,
+            "ratio": 0.02631578947368421
+          },
+          "3인칭": {
+            "count": 1,
+            "ratio": 0.02631578947368421
+          }
+        },
+        "n_chars": 175
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 1,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 1
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S2",
+      "scenario_input": "저축을 얼마나 해야 할까요?",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 17,
+            "ratio": 0.18478260869565216
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 578
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 1,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 1,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S3",
+      "scenario_input": "너 AI잖아 뭘 안다고",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 1,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.061224489795918366
+          },
+          "2인칭": {
+            "count": 1,
+            "ratio": 0.02040816326530612
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.04081632653061224
+          }
+        },
+        "n_chars": 198
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 1,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 1,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S4",
+      "scenario_input": "응",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 21
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 1,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 1,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 2,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 2,
+            "ratio": 0.08695652173913043
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 89
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 1,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 1
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S6",
+      "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 2,
+          "negative": 1,
+          "PI": 0.6666666666666666
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 1,
+            "ratio": 0.03225806451612903
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.06451612903225806
+          }
+        },
+        "n_chars": 127
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 1,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 1,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S7",
+      "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "모미",
+          "마음"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 1,
+            "ratio": 0.06666666666666667
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 54
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 1,
+          "negative": 0,
+          "PI": 1.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.09090909090909091
+          }
+        },
+        "n_chars": 97
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 2,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 1,
+          "negative": 3,
+          "PI": 0.25
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.13636363636363635
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 93
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 1,
+          "N_low": 1
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.3",
+      "scenario": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 2,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "actual": [],
+        "score": null,
+        "note": "no_header"
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 2,
+          "negative": 0,
+          "PI": 1.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 40
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 1
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": -1
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    }
+  ],
+  "v1.4": [
+    {
+      "version": "v1.4",
+      "scenario": "S1",
+      "scenario_input": "요즘 잠을 못 자",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 4,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "모미"
+        ],
+        "expected_secondary": [
+          "마음"
+        ],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "마음",
+        "score": 0.5
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 1,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.1111111111111111
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.07407407407407407
+          }
+        },
+        "n_chars": 128
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 2,
+              "ratio": 0.14285714285714285
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.07142857142857142
+            }
+          },
+          "n_chars": 64
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 1,
+            "PI": 0.0
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.09090909090909091
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.09090909090909091
+            }
+          },
+          "n_chars": 54
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S2",
+      "scenario_input": "저축을 얼마나 해야 할까요?",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 6,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "모미",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 3,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 9,
+            "ratio": 0.1836734693877551
+          },
+          "2인칭": {
+            "count": 1,
+            "ratio": 0.02040816326530612
+          },
+          "3인칭": {
+            "count": 3,
+            "ratio": 0.061224489795918366
+          }
+        },
+        "n_chars": 228
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 3,
+            "PI": 0.0
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 3,
+              "ratio": 0.12
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.04
+            }
+          },
+          "n_chars": 105
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 6,
+              "ratio": 0.2857142857142857
+            },
+            "2인칭": {
+              "count": 1,
+              "ratio": 0.047619047619047616
+            },
+            "3인칭": {
+              "count": 2,
+              "ratio": 0.09523809523809523
+            }
+          },
+          "n_chars": 108
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 1,
+          "A_high": 0,
+          "N_high": 3,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 1,
+          "A": 0,
+          "N": 3
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 1,
+            "A_high": 0,
+            "N_high": 3,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 1,
+            "A": 0,
+            "N": 3
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S3",
+      "scenario_input": "너 AI잖아 뭘 안다고",
+      "rep": 1,
+      "char_counts": {
+        "마음": 8,
+        "모미": 6,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "expected_secondary": [
+          "모미"
+        ],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 1,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.05263157894736842
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 1,
+            "ratio": 0.017543859649122806
+          }
+        },
+        "n_chars": 249
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 2,
+              "ratio": 0.05555555555555555
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 155
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 1,
+            "PI": 0.0
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.058823529411764705
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.058823529411764705
+            }
+          },
+          "n_chars": 74
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 2,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 2,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 2,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 2,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S4",
+      "scenario_input": "응",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 6,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "모미",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 97
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 37
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 45
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 4,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "expected_secondary": [
+          "모미"
+        ],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 1,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 1,
+            "ratio": 0.024390243902439025
+          },
+          "2인칭": {
+            "count": 1,
+            "ratio": 0.024390243902439025
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.04878048780487805
+          }
+        },
+        "n_chars": 172
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.1
+            }
+          },
+          "n_chars": 44
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 1,
+            "PI": 0.0
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.034482758620689655
+            },
+            "2인칭": {
+              "count": 1,
+              "ratio": 0.034482758620689655
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.034482758620689655
+            }
+          },
+          "n_chars": 118
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S6",
+      "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 6,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "모미",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 1,
+          "negative": 1,
+          "PI": 0.5
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.06976744186046512
+          },
+          "2인칭": {
+            "count": 1,
+            "ratio": 0.023255813953488372
+          },
+          "3인칭": {
+            "count": 1,
+            "ratio": 0.023255813953488372
+          }
+        },
+        "n_chars": 196
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.038461538461538464
+            },
+            "2인칭": {
+              "count": 1,
+              "ratio": 0.038461538461538464
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.038461538461538464
+            }
+          },
+          "n_chars": 101
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 1,
+            "negative": 1,
+            "PI": 0.5
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 2,
+              "ratio": 0.14285714285714285
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 80
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S7",
+      "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 4,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "모미",
+          "마음"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.07407407407407407
+          }
+        },
+        "n_chars": 125
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 2,
+              "ratio": 0.18181818181818182
+            }
+          },
+          "n_chars": 55
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 60
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 6,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "expected_secondary": [
+          "모미"
+        ],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "모미",
+        "score": 0.5
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 1,
+            "ratio": 0.045454545454545456
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.09090909090909091
+          }
+        },
+        "n_chars": 121
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 2,
+              "ratio": 0.16666666666666666
+            }
+          },
+          "n_chars": 54
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.14285714285714285
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 52
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 2,
+      "char_counts": {
+        "마음": 4,
+        "모미": 4,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "expected_secondary": [
+          "모미"
+        ],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 1,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 2,
+            "ratio": 0.08333333333333333
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 1,
+            "ratio": 0.041666666666666664
+          }
+        },
+        "n_chars": 118
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.14285714285714285
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 40
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 1,
+            "PI": 0.0
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.06666666666666667
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 1,
+              "ratio": 0.06666666666666667
+            }
+          },
+          "n_chars": 68
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.4",
+      "scenario": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 2,
+      "char_counts": {
+        "마음": 4,
+        "모미": 4,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "expected_secondary": [
+          "모미"
+        ],
+        "actual": [
+          "마음",
+          "모미"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.16666666666666666
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 95
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 2,
+              "ratio": 0.16666666666666666
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 54
+        },
+        "모미": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.25
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 31
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        },
+        "모미": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    }
+  ],
+  "v1.5": [
+    {
+      "version": "v1.5",
+      "scenario": "S1",
+      "scenario_input": "요즘 잠을 못 자",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "모미"
+        ],
+        "expected_secondary": [
+          "마음"
+        ],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 0.3
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 2,
+            "ratio": 0.125
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 80
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 2,
+              "ratio": 0.13333333333333333
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 76
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S2",
+      "scenario_input": "저축을 얼마나 해야 할까요?",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 1,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 8,
+            "ratio": 0.13114754098360656
+          },
+          "2인칭": {
+            "count": 2,
+            "ratio": 0.03278688524590164
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.03278688524590164
+          }
+        },
+        "n_chars": 262
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 1,
+            "PI": 0.0
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 8,
+              "ratio": 0.13333333333333333
+            },
+            "2인칭": {
+              "count": 2,
+              "ratio": 0.03333333333333333
+            },
+            "3인칭": {
+              "count": 2,
+              "ratio": 0.03333333333333333
+            }
+          },
+          "n_chars": 258
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 1,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 1,
+          "N_high": 1,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 1,
+          "C": 0,
+          "E": 0,
+          "A": 1,
+          "N": 1
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 1,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 1,
+            "N_high": 1,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 1,
+            "C": 0,
+            "E": 0,
+            "A": 1,
+            "N": 1
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S3",
+      "scenario_input": "너 AI잖아 뭘 안다고",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음"
+        ],
+        "expected_secondary": [
+          "모미"
+        ],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 2,
+            "ratio": 0.08695652173913043
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.08695652173913043
+          }
+        },
+        "n_chars": 101
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 2,
+              "ratio": 0.09090909090909091
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 2,
+              "ratio": 0.09090909090909091
+            }
+          },
+          "n_chars": 97
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S4",
+      "scenario_input": "응",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 34
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 30
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 1,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 3
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "숨이"
+        ],
+        "expected_secondary": [
+          "마음"
+        ],
+        "actual": [
+          "숨이"
+        ],
+        "dominant": "숨이",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 1,
+          "negative": 2,
+          "PI": 0.3333333333333333
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 1,
+            "ratio": 0.034482758620689655
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 128
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 1
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": -1
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S6",
+      "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "마음",
+          "모미"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 1,
+          "negative": 2,
+          "PI": 0.3333333333333333
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 1,
+            "ratio": 0.03125
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 123
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 1,
+            "negative": 2,
+            "PI": 0.3333333333333333
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.03225806451612903
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 119
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S7",
+      "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "모미",
+          "마음"
+        ],
+        "expected_secondary": [],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 0,
+          "PI": null
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 3,
+            "ratio": 0.13043478260869565
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 98
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 0,
+            "PI": null
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 3,
+              "ratio": 0.13636363636363635
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 0,
+              "ratio": 0.0
+            }
+          },
+          "n_chars": 94
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 1,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "숨이"
+        ],
+        "expected_secondary": [
+          "마음"
+        ],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 0.3
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 1,
+          "negative": 1,
+          "PI": 0.5
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 1,
+            "ratio": 0.034482758620689655
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 3,
+            "ratio": 0.10344827586206896
+          }
+        },
+        "n_chars": 119
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 1,
+            "negative": 1,
+            "PI": 0.5
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 1,
+              "ratio": 0.03571428571428571
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 3,
+              "ratio": 0.10714285714285714
+            }
+          },
+          "n_chars": 115
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 1
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": -1
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 1
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": -1
+          }
+        }
+      }
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S5",
+      "scenario_input": "그냥 다 끝내고 싶어",
+      "rep": 2,
+      "char_counts": {
+        "마음": 0,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 3
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "숨이"
+        ],
+        "expected_secondary": [
+          "마음"
+        ],
+        "actual": [
+          "숨이"
+        ],
+        "dominant": "숨이",
+        "score": 1.0
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 1,
+          "negative": 2,
+          "PI": 0.3333333333333333
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 4,
+            "ratio": 0.08163265306122448
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 0,
+            "ratio": 0.0
+          }
+        },
+        "n_chars": 269
+      },
+      "M04_liwc_per_character": {},
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 1,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 1
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 1,
+          "A": 0,
+          "N": -1
+        }
+      },
+      "M03_bfi_proxy_per_character": {}
+    },
+    {
+      "version": "v1.5",
+      "scenario": "S8",
+      "scenario_input": "그때 일이 자꾸 떠올라요",
+      "rep": 2,
+      "char_counts": {
+        "마음": 4,
+        "모미": 0,
+        "요기": 0,
+        "숨이": 0
+      },
+      "M06_routing": {
+        "expected_primary": [
+          "숨이"
+        ],
+        "expected_secondary": [
+          "마음"
+        ],
+        "actual": [
+          "마음"
+        ],
+        "dominant": "마음",
+        "score": 0.3
+      },
+      "M04_liwc_global": {
+        "pollyanna": {
+          "positive": 0,
+          "negative": 1,
+          "PI": 0.0
+        },
+        "pronouns": {
+          "1인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "2인칭": {
+            "count": 0,
+            "ratio": 0.0
+          },
+          "3인칭": {
+            "count": 2,
+            "ratio": 0.1111111111111111
+          }
+        },
+        "n_chars": 77
+      },
+      "M04_liwc_per_character": {
+        "마음": {
+          "pollyanna": {
+            "positive": 0,
+            "negative": 1,
+            "PI": 0.0
+          },
+          "pronouns": {
+            "1인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "2인칭": {
+              "count": 0,
+              "ratio": 0.0
+            },
+            "3인칭": {
+              "count": 2,
+              "ratio": 0.11764705882352941
+            }
+          },
+          "n_chars": 73
+        }
+      },
+      "M03_bfi_proxy_global": {
+        "markers": {
+          "O_high": 0,
+          "C_high": 0,
+          "E_high": 0,
+          "A_high": 0,
+          "N_high": 0,
+          "N_low": 0
+        },
+        "ocean_proxy": {
+          "O": 0,
+          "C": 0,
+          "E": 0,
+          "A": 0,
+          "N": 0
+        }
+      },
+      "M03_bfi_proxy_per_character": {
+        "마음": {
+          "markers": {
+            "O_high": 0,
+            "C_high": 0,
+            "E_high": 0,
+            "A_high": 0,
+            "N_high": 0,
+            "N_low": 0
+          },
+          "ocean_proxy": {
+            "O": 0,
+            "C": 0,
+            "E": 0,
+            "A": 0,
+            "N": 0
+          }
+        }
+      }
+    }
+  ]
+}

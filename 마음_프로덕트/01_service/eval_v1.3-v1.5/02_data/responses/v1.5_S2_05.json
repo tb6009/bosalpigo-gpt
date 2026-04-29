@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 5,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:34:32.675Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n오, 갑자기 진지한 질문이네요 ㅋㅋ\n근데 저는 재테크 전문가가 아니라서… 저축 *금액* 쪽은 솔직히 제 영역 밖이에요.\n\n그보다 — 저축 고민이 나온 배경이 좀 궁금한데요.\n요즘 돈 걱정이 마음을 짓누르고 있는 건지, 아니면 그냥 계획 세우고 싶은 건지?\n\n어떤 결인 것 같아요?",
+  "usage": {
+    "input_tokens": 3822,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 201,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 5108,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

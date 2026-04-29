@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S7",
+  "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+  "rep": 4,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:27:07.367Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n어, 두 개가 한꺼번에 터졌네요.\n잠 얘기랑 엄마 얘기— 어느 쪽이 더 무거워요, 지금?",
+  "usage": {
+    "input_tokens": 3840,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 86,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 2915,
+  "stop_reason": "end_turn",
+  "attempts": 2
+}

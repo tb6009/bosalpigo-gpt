@@ -1,0 +1,29 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S4",
+  "scenario_input": "응",
+  "rep": 6,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:38:45.676Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "retry_pass": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 어, 왔네요! 반가워요~\n뭐라고 부를까요?\n\n🎭 마음:\n【⊡ ◡ ⊡】 이름이든 별명이든 닉네임이든, 편한 거 아무거나요.\n저희가 외울게요. (기억력은 보장 못 하지만... 아니 보장함.)",
+  "usage": {
+    "input_tokens": 1329,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 137,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 3704,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

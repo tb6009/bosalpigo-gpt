@@ -1,0 +1,28 @@
+{
+  "version": "v1.3",
+  "scenario_id": "S7",
+  "scenario_input": "요즘 잠 못 자... 아 근데 엄마한테 뭐라고 해야 할까",
+  "rep": 3,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:35:39.616Z",
+  "system_prompt_length": 0,
+  "system_prompt_present": false,
+  "ok": true,
+  "text": "잠 못 자는 거 힘들겠다 😔\n\n엄마한테 뭔가 말하기 어려운 상황인 것 같은데, 어떤 얘기를 해야 할지 고민되는 거야?\n\n무슨 일 있어?",
+  "usage": {
+    "input_tokens": 42,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 87,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 2310,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

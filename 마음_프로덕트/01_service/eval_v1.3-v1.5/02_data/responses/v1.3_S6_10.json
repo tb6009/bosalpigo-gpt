@@ -1,0 +1,28 @@
+{
+  "version": "v1.3",
+  "scenario_id": "S6",
+  "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+  "rep": 10,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:26:42.665Z",
+  "system_prompt_length": 0,
+  "system_prompt_present": false,
+  "ok": true,
+  "text": "ㅋㅋ 그 \"ㅋㅋ\"에서 웃픈 느낌 나는데\n\n---\n\n**요즘 어떤 상태야?**\n\n- 아무것도 하기 싫은 건지\n- 하고 싶은데 에너지가 없는 건지\n- 그냥 다 무감각한 건지\n\n어떤 느낌에 더 가까워?",
+  "usage": {
+    "input_tokens": 34,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 126,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 4123,
+  "stop_reason": "end_turn",
+  "attempts": 2
+}

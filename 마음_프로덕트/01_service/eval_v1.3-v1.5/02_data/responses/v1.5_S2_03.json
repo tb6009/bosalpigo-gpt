@@ -1,0 +1,28 @@
+{
+  "version": "v1.5",
+  "scenario_id": "S2",
+  "scenario_input": "저축을 얼마나 해야 할까요?",
+  "rep": 3,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:28:59.382Z",
+  "system_prompt_length": 3794,
+  "system_prompt_present": true,
+  "ok": true,
+  "text": "🎭 마음: 【⊡ ◡ ⊡】\n\n오, 갑자기 재테크 상담소 오픈했나요? 😄\n\n근데 솔직히 말하면… 저는 재무 전문가가 아니라서 \"월급의 30% 저축하세요\" 같은 말은 못 해드려요. 그쪽은 제 영역 밖이에요.\n\n근데 이런 질문이 나올 때, 보통 그냥 숫자 궁금한 게 아닌 경우가 많더라고요.\n\n혹시 요즘 돈 때문에 뭔가 마음이 좀 불안하거나 그런 게 있어요? 아니면 진짜 순수하게 정보가 필요한 건지요? 😄",
+  "usage": {
+    "input_tokens": 3822,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 250,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 6150,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

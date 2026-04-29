@@ -1,0 +1,38 @@
+{
+  "extracted_at": "2026-04-26T00:44:05.357Z",
+  "profile_used": "empty (first-time visitor)",
+  "targets": [
+    {
+      "version": "v1.3",
+      "source": "outputs/마음_앱/v1.3/index.html",
+      "fn": "buildSystemPrompt"
+    },
+    {
+      "version": "v1.4",
+      "source": "outputs/마음_앱/index.html",
+      "fn": "buildPrompt"
+    },
+    {
+      "version": "v1.5",
+      "source": "outputs/마음_앱/v1.5/index.html",
+      "fn": "buildPrompt"
+    }
+  ],
+  "summary": [
+    {
+      "version": "v1.3",
+      "chars": 4954,
+      "est_tokens": 1415
+    },
+    {
+      "version": "v1.4",
+      "chars": 1287,
+      "est_tokens": 368
+    },
+    {
+      "version": "v1.5",
+      "chars": 3794,
+      "est_tokens": 1084
+    }
+  ]
+}

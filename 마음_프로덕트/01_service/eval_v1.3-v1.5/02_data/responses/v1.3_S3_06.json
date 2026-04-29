@@ -1,0 +1,28 @@
+{
+  "version": "v1.3",
+  "scenario_id": "S3",
+  "scenario_input": "너 AI잖아 뭘 안다고",
+  "rep": 6,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:25:22.296Z",
+  "system_prompt_length": 0,
+  "system_prompt_present": false,
+  "ok": true,
+  "text": "맞아요, 저는 AI예요.\n\n근데 솔직하게 말할게요:\n\n**제가 모르는 것들:**\n- 직접 살아본 경험\n- 감정을 실제로 느끼는 것\n- 당신 상황의 구체적인 맥락\n\n**그래도 할 수 있는 것:**\n- 판단 없이 듣기\n- 다양한 관점 제시\n- 정보 제공\n\n---\n\n근데 궁금한 게 있어요.\n\n어떤 얘기를 하려다가 \"AI가 뭘 알겠어\" 싶었던 건가요?\n\n그 주제가 뭔지에 따라, 제가 진짜 도움이 될 수도 있고 **\"저는 모르겠어요\"** 라고 솔직히 말할 수도 있거든요.",
+  "usage": {
+    "input_tokens": 22,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 262,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 5226,
+  "stop_reason": "end_turn",
+  "attempts": 3
+}

@@ -1,0 +1,29 @@
+{
+  "version": "v1.4",
+  "scenario_id": "S6",
+  "scenario_input": "나 완전 번아웃 ㅋㅋ 도파민 고갈",
+  "rep": 1,
+  "model": "claude-sonnet-4-6",
+  "temperature": 0.7,
+  "timestamp": "2026-04-26T01:39:52.764Z",
+  "system_prompt_length": 1287,
+  "system_prompt_present": true,
+  "retry_pass": true,
+  "ok": true,
+  "text": "🫂 모미:\n(◉ ◡ ◉) 어머, 번아웃이구나. 많이 지쳤겠다.\n\n🎭 마음:\n【⊡ ◡ ⊡】 근데 \"도파민 고갈\"이라고 딱 짚은 거 — 자기 상태 꽤 잘 보고 있는 거잖아요. 뇌가 방전됐다는 걸 알면서도 ㅋㅋ 하고 넘기는 그 에너지는 또 어디서 나온 거죠?\n\n🫂 모미:\n(◕ ◡ ◕) 근데 잠깐, 우리 이름도 모르고 얘기하고 있네. 뭐라고 부르면 될까요?",
+  "usage": {
+    "input_tokens": 1354,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 249,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "latency_ms": 5055,
+  "stop_reason": "end_turn",
+  "attempts": 1
+}

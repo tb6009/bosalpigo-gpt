@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>v1.5 빌드 진행 대시보드</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", sans-serif; }
+  .bar-fill { transition: width 0.6s ease-out; }
+  .pulse-dot { animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+  .fade-in { animation: fadeIn .4s ease-out; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(4px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 min-h-screen">
+<div class="max-w-5xl mx-auto px-6 py-10">
+
+  <header class="mb-8 flex items-baseline justify-between">
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight">v1.5 빌드 진행 대시보드</h1>
+      <p class="text-sm text-neutral-400 mt-1">5 STEP 진척률 — 캐릭터 시트부터 배포까지</p>
+    </div>
+    <div class="text-right">
+      <div id="last-updated" class="text-xs text-neutral-500">—</div>
+      <div class="text-xs text-neutral-600 mt-1">자동 갱신 5초</div>
+    </div>
+  </header>
+
+  <div id="overall" class="mb-8 p-5 rounded-xl bg-neutral-900 border border-neutral-800">
+    <div class="flex items-baseline justify-between mb-3">
+      <h2 class="text-base font-medium text-neutral-300">전체 빌드 진척</h2>
+      <div class="text-sm text-neutral-400"><span id="overall-pct">0</span>%</div>
+    </div>
+    <div class="h-3 bg-neutral-800 rounded-full overflow-hidden">
+      <div id="overall-bar" class="bar-fill h-full bg-gradient-to-r from-indigo-500 to-emerald-500" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div id="steps" class="space-y-4"></div>
+
+  <footer class="mt-10 text-xs text-neutral-600">
+    <p>리서치 진척: <a href="dashboard.html" class="text-indigo-400 underline">dashboard.html</a></p>
+    <p class="mt-1">데이터: <code class="text-neutral-500">build_status.json</code></p>
+  </footer>
+</div>
+
+<script>
+const STEPS_META = {
+  S1: { name: "STEP 1 — 캐릭터 시트 v1.5",       desc: "11개 .md (마음·모미·요기·숨이 + v1.0~v1.4 압축)" },
+  S2: { name: "STEP 2 — 시스템 프롬프트 통합",     desc: "14_v1.5_시스템프롬프트.md (약 9KB / 2,500토큰)" },
+  S3: { name: "STEP 3 — index.html UI",            desc: "4 캐릭터·CSS·디스클레이머·모달·종단 데이터" },
+  S4: { name: "STEP 4 — 위기 안전망 코드",         desc: "키워드 감지·강제 모달·이중 안전망" },
+  S5: { name: "STEP 5 — /v1.5/ 베타 배포 + 자문",  desc: "GitHub Pages·Worker·Phase 5 자문 발송" }
+};
+function colorFor(pct) {
+  if (pct >= 100) return "bg-emerald-500";
+  if (pct >= 70)  return "bg-indigo-500";
+  if (pct >= 30)  return "bg-blue-500";
+  if (pct >  0)   return "bg-amber-500";
+  return "bg-neutral-700";
+}
+function statusLabel(pct) {
+  if (pct >= 100) return { text: "완료", cls: "text-emerald-400" };
+  if (pct >  0)   return { text: "작업 중", cls: "text-blue-400 pulse-dot" };
+  return { text: "대기", cls: "text-neutral-500" };
+}
+function render(data) {
+  const c = document.getElementById("steps");
+  c.innerHTML = "";
+  let total=0, n=0;
+  for (const k of ["S1","S2","S3","S4","S5"]) {
+    const t = data.steps[k] || { pct: 0, sub: [] };
+    const meta = STEPS_META[k];
+    const color = colorFor(t.pct);
+    const status = statusLabel(t.pct);
+    total += t.pct; n++;
+    const subHtml = (t.sub||[]).map(s=>{
+      const mark = s.done ? "✅" : (s.partial ? "🔵" : "⬜");
+      return `<li class="flex items-center gap-2 text-xs text-neutral-400"><span>${mark}</span>${s.label}</li>`;
+    }).join("");
+    const el = document.createElement("div");
+    el.className = "fade-in p-5 rounded-xl bg-neutral-900 border border-neutral-800";
+    el.innerHTML = `
+      <div class="flex items-start justify-between mb-2">
+        <div>
+          <div class="text-sm font-medium text-neutral-200">${meta.name}</div>
+          <div class="text-xs text-neutral-500 mt-0.5">${meta.desc}</div>
+        </div>
+        <div class="text-right">
+          <div class="text-sm text-neutral-300">${t.pct}%</div>
+          <div class="text-xs ${status.cls} mt-0.5">${status.text}</div>
+        </div>
+      </div>
+      <div class="h-2.5 bg-neutral-800 rounded-full overflow-hidden">
+        <div class="bar-fill h-full ${color}" style="width:${t.pct}%"></div>
+      </div>
+      ${subHtml ? `<ul class="mt-3 space-y-1">${subHtml}</ul>` : ""}
+    `;
+    c.appendChild(el);
+  }
+  const overall = Math.round(total/n);
+  document.getElementById("overall-pct").textContent = overall;
+  document.getElementById("overall-bar").style.width = overall + "%";
+  document.getElementById("last-updated").textContent = "마지막 갱신: " + (data.updated_at || "—");
+}
+async function tick() {
+  try {
+    const res = await fetch("build_status.json?t=" + Date.now());
+    const data = await res.json();
+    render(data);
+  } catch (e) {
+    document.getElementById("last-updated").textContent = "갱신 실패";
+  }
+}
+tick(); setInterval(tick, 5000);
+</script>
+</body>
+</html>
